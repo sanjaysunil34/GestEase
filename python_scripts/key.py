@@ -27,7 +27,7 @@ def bind(action):
         keyboard.press('o')
         keyboard.press('i')
         keyboard.press('n')
-        keyboard.press('t')
+        keyboard.press('t') 
     elif(action == 'ok'):
         keyboard.press('enter')
     elif(action == 'down'):
