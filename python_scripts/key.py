@@ -1,36 +1,32 @@
 import keyboard
 from time import sleep
-
+from functionality import openapp
 
 def bind(action):
-    if(action == 'play' or action == 'pause'):
+    check = 1
+
+    if(action=='play'or action=='pause'):
         keyboard.press('space')
-    elif(action == 'increase'):
+    elif(action=='increase volume'):
         keyboard.press('up')
-    elif(action == 'present'):
-        keyboard.press('F5')
-    elif(action == 'next'):
-        keyboard.press('right')
-    elif(action == 'previous'):
+    elif(action=='go back'):
         keyboard.press('left')
-    elif(action == 'escape'):
-        keyboard.press('esc')
-    elif(action == 'windows'):
-        keyboard.press_and_release('windows')
-    elif(action == 'powerpoint'):
-        keyboard.press('p')
-        keyboard.press('o')
-        keyboard.press('w')
-        keyboard.press('e')
-        keyboard.press('r')
-        keyboard.press('p')
-        keyboard.press('o')
-        keyboard.press('i')
-        keyboard.press('n')
-        keyboard.press('t') 
-    elif(action == 'ok'):
-        keyboard.press('enter')
-    elif(action == 'down'):
-        keyboard.press_and_release('tab')
-    elif(action == 'close'):
-        keyboard.press_and_release('alt + F4')
+    elif(action=='go forward'):
+        keyboard.press('right')
+    elif(action=='decrease volume'):
+        keyboard.press('down')        
+    elif(action=='full screen' or action=='exit full screen'):
+        keyboard.press('f')    
+    elif(action=='mute'):
+        keyboard.press('m')  
+    elif(action=='close'):
+        keyboard.send('alt+F4')
+    elif("open app" in action.lower()):
+        openapp(action)
+    elif("search for" in action.lower()):
+        search_for(action)
+
+    if(not check):
+        time.sleep(2)
+
+
