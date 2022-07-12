@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+}
+
+h1 {
+    color: orange;
+}
+
+.home-container{
+    text-align: -webkit-center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    /* background-color:#F6F5F6; */
+    background-image: url("../../assets/background.jpg");
+    background-size: 600px 600px;
+}
+
+.home-button-group{
+    display: grid;
+    width: 50%;
+    background-color:white;
+    border-radius: 20px;
+    padding: 20px;
+    margin: auto;
+    height: 40%;
+}
+
+.home-buttons-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.home-buttons{
+    background-color: #2AD5F1;
+    color: white;
+    font-weight: 700;
+    min-width: 40%;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+}

@@ -1,0 +1,77 @@
+body{
+    margin: 0;
+}
+
+h1 {
+    color: orange;
+}
+
+.voice-container{
+    text-align: -webkit-center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    /* background-color:#F6F5F6; */
+    background-image: url("../../assets/background.jpg");
+    background-size: 600px 600px;
+}
+
+.voice-button-group{
+    display: grid;
+    width: 50%;
+    border-radius: 20px;
+    background-color:white;
+    padding: 20px;
+    margin: auto;
+    height: 40%;
+}
+
+.voice-buttons-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.voice-buttons{
+    color:#2AD5F1;
+    border: 2px solid #2AD5F1;
+    background-color: white;
+    font-weight: 700;
+    min-width: 40%;
+    border-radius: 5px;
+    height: 40px;
+}
+
+.voice-header{
+    display: flex;
+    color: white;
+    background-color: #2AD5F1;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 150px;
+    width: 30%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.voice-header-text{
+    width: 100%;
+}
+
+.voice-launch{
+    color: white;
+    background-color: #2AD5F1;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 150px;
+    width: 30%;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
+
+.voice-back-button{
+    background-color: #2AD5F1;
+    border: none;
+    color: white;
+}
