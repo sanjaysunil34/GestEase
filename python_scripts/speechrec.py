@@ -61,8 +61,8 @@ def Main():
         print(e)
 
 command = sys.argv[1]
+print(command)
 if command == "start":
-    print(Main())
+    Main()
     sys.stdout.flush()
-
 # Main()

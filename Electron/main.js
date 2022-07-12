@@ -3,7 +3,10 @@ console.log('main.js');
 
 
 const electron = require("electron");
-const {PythonShell} = require('python-shell')
+require('electron-reload')(__dirname, {
+    // Note that the path to electron may vary according to the main file
+    electron: require(`${__dirname}/node_modules/electron`)
+});
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const electronIpcMain = require('electron').ipcMain;
@@ -36,33 +39,6 @@ function createWindow() {
         win = null;
     })
 }
-
-function record_speech  () {
-    // var btnstatus = document.getElementById('voice').innerText;
-    // var options = {
-    //     scriptPath: path.join(__dirname,'./python/'),
-    //     mode: 'text',
-    // }
-    
-    // PythonShell.run('main.py', options, function (err, results) {
-    //     if (err) throw err;
-    //     console.log('results: ', results);
-    //   }); 
-    
-    var options = {
-        scriptPath : path.join(__dirname, './python'),
-        args : [],
-        //mode: "json"
-    };
-    
-    let pyshell = new PythonShell('main.py', options);
-    
-    pyshell.run(function(message) {
-        console.log(message);
-        console.log(typeof message);
-    });
-}
-
 
 app.on('ready', createWindow);
 
