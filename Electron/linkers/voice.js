@@ -4,7 +4,7 @@ let child;
 function gestease(command) {
     if(command == 'start'){
         console.log('starting geastease');
-        child = spawn('python', ['../python_scripts/speechrec.py', "start"]);
+        child = spawn('python', ['../python_scripts/main.py', "start"]);
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));
