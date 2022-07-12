@@ -51,10 +51,10 @@ def Main():
                 print('windows')
                 bind('windows')
                 Main()
-            elif "powerpoint" in text.lower():
-                print('powerpoint')
-                bind('powerpoint')
-                Main()
+            # elif "powerpoint" in text.lower():
+            #     print('powerpoint')
+            #     bind('powerpoint')
+            #     Main()
             elif "ok" in text.lower():
                 print('ok')
                 bind('ok')
