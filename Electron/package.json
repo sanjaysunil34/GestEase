@@ -7,5 +7,9 @@
     },
     "scripts": {
         "start": "electron ."
+    },
+    "dependencies": {
+        "electron-reload": "^2.0.0-alpha.1",
+        "python-shell": "^3.0.1"
     }
 }
