@@ -3,22 +3,23 @@ from datetime import datetime
 from key import bind
 import sys
 
-def Main(): 
+
+def Main():
     r = sr.Recognizer()
     try:
         with sr.Microphone() as source:
-            print("Time : ",datetime.now().time())
+            print("Time : ", datetime.now().time())
             print("Listening....")
-            audio = r.listen(source, phrase_time_limit = 3)
-            print("Time : ",datetime.now().time())
+            audio = r.listen(source)
+            print("Time : ", datetime.now().time())
             print("Recognizing....")
             r.adjust_for_ambient_noise(source)
-            text = r.recognize_google(audio)
-            print("Time : ",datetime.now().time())
+            text = r.recognize(audio)
+            print("Time : ", datetime.now().time())
             print(text.lower())
             if len(text) == 0:
                 Main()
-            elif "play" in text.lower():              
+            elif "play" in text.lower():
                 print('playing')
                 bind('play')
             elif "pause" in text.lower():
@@ -29,36 +30,40 @@ def Main():
                 bind('increase volume')
             elif "decrease volume" in text.lower():
                 print('decreasing volume')
-                bind('decrease volume')                
+                bind('decrease volume')
             elif "full screen" in text.lower():
                 print('full screen')
-                bind('full screen') 
+                bind('full screen')
             elif "exit full screen" in text.lower():
                 print('exiting full screen')
-                bind('full screen')    
+                bind('full screen')
             elif "mute" in text.lower() or "unmute" in text.lower():
                 print('mute')
                 bind('mute')
             elif "close" in text.lower():
                 print('close')
                 bind('close')
-            elif "go back" in text.lower(): 
+            elif "go back" in text.lower():
                 print('go back')
                 bind('go back')
-            elif "forward" in text.lower(): 
+            elif "forward" in text.lower():
                 print('go forward')
-                bind('go forward') 
-            elif "open app" in text.lower(): 
+                bind('go forward')
+            elif "open app" in text.lower():
+                print(text)
+                bind(text)
+            elif "sing" in text.lower():
                 print(text)
                 bind(text)
             elif "search for" in text.lower():
                 print(text)
                 bind(text)
-       
+
             Main()
     except Exception as e:
         Main()
         print(e)
+
 
 command = sys.argv[1]
 print(command)
