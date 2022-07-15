@@ -30,6 +30,7 @@ h1 {
 .voice-buttons-container{
     margin-top: 20px;
     margin-bottom: 20px;
+    align-self: center;
 }
 
 .voice-buttons{
@@ -57,6 +58,8 @@ h1 {
 
 .voice-header-text{
     width: 100%;
+    align-self: center;
+    font-size: 1.2rem;;
 }
 
 .voice-launch{
