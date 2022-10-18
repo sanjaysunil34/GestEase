@@ -1,7 +1,7 @@
 console.log('Main process working');
 console.log('main.js');
 
-
+//best project
 const electron = require("electron");
 require('electron-reload')(__dirname, {
     // Note that the path to electron may vary according to the main file
