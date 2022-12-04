@@ -2,12 +2,16 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 import tensorflow as tf
+import os
+dirname = os.path.dirname(__file__)
+filename = os.path.join(dirname, 'point_history_classifier.tflite')
+print(filename)
 
 
 class PointHistoryClassifier(object):
     def __init__(
         self,
-        model_path='model/point_history_classifier/point_history_classifier.tflite',
+        model_path=filename,
         score_th=0.5,
         invalid_value=0,
         num_threads=1,
