@@ -1,10 +1,10 @@
 const { spawn } = require('child_process');
 let child; 
 
-function gestease(command) {
+function gestease_gesture(command) {
     if(command == 'start'){
-        console.log('starting geastease');
-        child = spawn('python', ['../python_scripts/voice/speechrec.py', "start"]);
+        console.log('starting geastease - gesture');
+        child = spawn('python', ['../python_scripts/gesture/app.py']);
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));
@@ -23,4 +23,4 @@ function gestease(command) {
     }
 }
 
-module.exports = gestease;
+module.exports = gestease_gesture;
