@@ -1,7 +1,7 @@
 import keyboard
 from time import sleep
 import time
-from functionality import openapp, sing
+from functionality import openapp, sing,search_for
 
 
 def bind(action):
