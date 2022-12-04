@@ -3,7 +3,6 @@ from time import sleep
 import time
 from functionality import openapp, sing,search_for
 
-
 def bind(action):
     check = 1
 

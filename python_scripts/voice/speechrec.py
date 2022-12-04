@@ -15,7 +15,7 @@ def Main():
             audio = r.listen(source)
             print(datetime.now().time(), " Recognizing....")
             r.adjust_for_ambient_noise(source)
-            text = r.recognize(audio)
+            text = r.recognize_google(audio)
             print(datetime.now().time(), "Text : ", text.lower())
 
             if len(text) == 0:

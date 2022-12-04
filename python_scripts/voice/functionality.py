@@ -1,7 +1,6 @@
 import keyboard
 import time
 
-
 def openapp(action):
     app = action.split()
     print(app)
