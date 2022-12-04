@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#~\miniconda3\envs\gestease\python.exe
 # -*- coding: utf-8 -*-
 import numpy as np
 import tensorflow as tf
