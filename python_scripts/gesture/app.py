@@ -17,6 +17,11 @@ from model import KeyPointClassifier
 from model import PointHistoryClassifier
 
 from key import bind
+import sys
+import os
+dirname = os.path.dirname(__file__)
+filename = os.path.join(dirname, 'model/keypoint_classifier/keypoint_classifier_label.csv')
+print(filename)
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -73,7 +78,7 @@ def main():
     point_history_classifier = PointHistoryClassifier()
 
     # Read labels ###########################################################
-    with open('model/keypoint_classifier/keypoint_classifier_label.csv',
+    with open(filename,
               encoding='utf-8-sig') as f:
         keypoint_classifier_labels = csv.reader(f)
         keypoint_classifier_labels = [

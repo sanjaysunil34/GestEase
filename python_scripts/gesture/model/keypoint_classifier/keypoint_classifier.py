@@ -2,12 +2,16 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 import tensorflow as tf
+import os
+dirname = os.path.dirname(__file__)
+filename = os.path.join(dirname, 'keypoint_classifier.tflite')
+print(filename)
 
 
 class KeyPointClassifier(object):
     def __init__(
         self,
-        model_path='model/keypoint_classifier/keypoint_classifier.tflite',
+        model_path=filename,
         num_threads=1,
     ):
         self.interpreter = tf.lite.Interpreter(model_path=model_path,
