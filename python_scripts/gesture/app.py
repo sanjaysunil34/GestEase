@@ -16,12 +16,13 @@ from utils import CvFpsCalc
 from model import KeyPointClassifier
 from model import PointHistoryClassifier
 
-from key import bind
+from mapping import map_gesture
 import sys
 import os
 dirname = os.path.dirname(__file__)
-filename = os.path.join(dirname, 'model/keypoint_classifier/keypoint_classifier_label.csv')
-print(filename)
+filename_keypoint = os.path.join(dirname, 'model/keypoint_classifier/keypoint_classifier_label.csv')
+filename_history = os.path.join(dirname, 'model/point_history_classifier/point_history_classifier_label.csv')
+print(filename_history,filename_keypoint)
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -78,14 +79,14 @@ def main():
     point_history_classifier = PointHistoryClassifier()
 
     # Read labels ###########################################################
-    with open(filename,
+    with open(filename_keypoint,
               encoding='utf-8-sig') as f:
         keypoint_classifier_labels = csv.reader(f)
         keypoint_classifier_labels = [
             row[0] for row in keypoint_classifier_labels
         ]
     with open(
-            'model/point_history_classifier/point_history_classifier_label.csv',
+            filename_history,
             encoding='utf-8-sig') as f:
         point_history_classifier_labels = csv.reader(f)
         point_history_classifier_labels = [
@@ -163,47 +164,7 @@ def main():
 
                 text = keypoint_classifier_labels[hand_sign_id]
 
-                if len(text) == 0:
-                    main()
-                elif "play" in text.lower():
-                    print('plaaying')
-                    bind('play')
-                elif "pause" in text.lower():
-                    print('pausing')
-                    bind('pause')
-                elif "increase" in text.lower():
-                    print('increase')
-                    bind('increase')
-                elif "present" in text.lower():
-                    print('present')
-                    bind('present')
-                elif "next" in text.lower():
-                    print('next')
-                    bind('next')
-                elif "previous" in text.lower():
-                    print('previous')
-                    bind('previous')
-                elif "escape" in text.lower():
-                    print('escape')
-                    bind('escape')
-                elif "windows" in text.lower():
-                    print('windows')
-                    bind('windows')
-                # elif "powerpoint" in text.lower():
-                #     print('powerpoint')
-                #     bind('powerpoint')
-                #     main()
-                elif "ok" in text.lower():
-                    print('ok')
-                    bind('ok')
-                elif "down" in text.lower():
-                    print('down')
-                    bind('down')
-                elif "close" in text.lower():
-                    print('close')
-                    # bind('close')
-                print('blah')
-
+                map_gesture(text)
                 # if hand_sign_id == 2:  # Point gesture
                 if hand_sign_id == "Not applicable":    #disabling point history classification
                     point_history.append(landmark_list[8])
@@ -239,7 +200,7 @@ def main():
         debug_image = draw_info(debug_image, fps, mode, number)
 
         # Screen reflection #############################################################
-        # cv.imshow('Hand Gesture Recognition', debug_image)
+        #cv.imshow('Hand Gesture Recognition', debug_image)
 
     cap.release()
     cv.destroyAllWindows()
