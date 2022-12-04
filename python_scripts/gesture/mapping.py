@@ -1,9 +1,7 @@
 from key import bind
 
 def map_gesture(text):
-    if len(text) == 0:
-        main()
-    elif "play" in text.lower():
+    if "play" in text.lower():
         print('plaaying')
         bind('play')
     elif "pause" in text.lower():
