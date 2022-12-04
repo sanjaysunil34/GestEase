@@ -21,6 +21,7 @@ import sys
 import os
 dirname = os.path.dirname(__file__)
 filename = os.path.join(dirname, 'model/keypoint_classifier/keypoint_classifier_label.csv')
+filename_history = os.path.join(dirname, 'model/point_history_classifier/point_history_classifier_label.csv')
 print(filename)
 
 def get_args():
@@ -85,7 +86,7 @@ def main():
             row[0] for row in keypoint_classifier_labels
         ]
     with open(
-            'model/point_history_classifier/point_history_classifier_label.csv',
+            filename_history,
             encoding='utf-8-sig') as f:
         point_history_classifier_labels = csv.reader(f)
         point_history_classifier_labels = [
@@ -201,7 +202,7 @@ def main():
                     bind('down')
                 elif "close" in text.lower():
                     print('close')
-                    # bind('close')
+                    bind('close')
                 print('blah')
 
                 # if hand_sign_id == 2:  # Point gesture

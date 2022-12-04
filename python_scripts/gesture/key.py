@@ -30,7 +30,7 @@ def bind(action):
     elif(action == 'ok'):
         keyboard.press_and_release('enter')
     elif(action == 'close'):
-        keyboard.press('esc')
+        keyboard.press('c')
     elif("open app" in action.lower()):
         openapp(action)
     elif("sing" in action.lower()):
