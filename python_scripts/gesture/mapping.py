@@ -39,5 +39,5 @@ def map_gesture(text):
         bind('down')
     elif "close" in text.lower():
         print('close')
-        # bind('close')
+        bind('close')
     print('blah')
