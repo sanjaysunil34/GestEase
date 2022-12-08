@@ -1,6 +1,3 @@
-'''
-max_num_hands=1, 
-'''
 import csv
 import copy
 import argparse
@@ -164,7 +161,7 @@ def main():
 
                 text = keypoint_classifier_labels[hand_sign_id]
 
-                map_gesture(text)
+                # map_gesture(text)
                 # if hand_sign_id == 2:  # Point gesture
                 if hand_sign_id == "Not applicable":    #disabling point history classification
                     point_history.append(landmark_list[8])
