@@ -1,5 +1,7 @@
 {
-    "name": "GestEase",
+    "name": "gestease-app",
+    "productName": "Gestease",
+    "description": "App to control PC using gestures and voice commands",
     "version": "1.0.0",
     "main": "main.js",
     "devDependencies": {
