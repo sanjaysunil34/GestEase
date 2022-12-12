@@ -13,7 +13,6 @@ from utils import CvFpsCalc
 from model import KeyPointClassifier
 from model import PointHistoryClassifier
 
-from mapping import map_gesture
 import sys
 import os
 from key import bind
