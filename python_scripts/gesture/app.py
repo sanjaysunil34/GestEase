@@ -16,6 +16,8 @@ from model import PointHistoryClassifier
 from mapping import map_gesture
 import sys
 import os
+from key import bind
+
 dirname = os.path.dirname(__file__)
 filename_keypoint = os.path.join(dirname, 'model/keypoint_classifier/keypoint_classifier_label.csv')
 filename_history = os.path.join(dirname, 'model/point_history_classifier/point_history_classifier_label.csv')
@@ -157,11 +159,11 @@ def main():
                 hand_sign_id = keypoint_classifier(pre_processed_landmark_list)
 
                 #print hand sign
-                print(hand_sign_id,":",keypoint_classifier_labels[hand_sign_id],)
+                # print(hand_sign_id,":",keypoint_classifier_labels[hand_sign_id],)
 
                 text = keypoint_classifier_labels[hand_sign_id]
-
-                # map_gesture(text)
+                bind(text)
+                
                 # if hand_sign_id == 2:  # Point gesture
                 if hand_sign_id == "Not applicable":    #disabling point history classification
                     point_history.append(landmark_list[8])
