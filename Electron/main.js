@@ -23,7 +23,7 @@ function createWindow() {
 
     winone.loadFile(path.join(__dirname, "./pages/home/home.html"));
 
-    winone.webContents.openDevTools();
+    // winone.webContents.openDevTools();
 
     winone.on("closed", () => {
         win = null;

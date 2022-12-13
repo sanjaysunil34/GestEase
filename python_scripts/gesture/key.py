@@ -16,10 +16,16 @@ def bind(action):
         keyboard.press('left')
     elif(action == 'Next'):
         keyboard.press('right')
-    elif(action == 'ok'):
+    elif(action == 'Ok'):
         keyboard.press_and_release('enter')
     elif(action == 'Close'):
-        keyboard.press('alt+F4')
+        keyboard.press_and_release('alt+F4')
+    elif(action == 'Switch'):
+        keyboard.press_and_release('win + tab')
+    elif(action == 'Present'):
+        keyboard.press('F5')
+    elif(action == 'End_Present'):
+        keyboard.press('esc')
     sleep(2)
     # elif(action == 'full screen' or action == 'exit full screen'):
     #     keyboard.press('f')
