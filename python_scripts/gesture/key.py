@@ -16,7 +16,7 @@ def bind(action):
         keyboard.press('left')
     elif(action == 'Next'):
         keyboard.press('right')
-    elif(action == 'ok'):
+    elif(action == 'Ok'):
         keyboard.press_and_release('enter')
     elif(action == 'Close'):
         keyboard.press_and_release('alt+F4')
