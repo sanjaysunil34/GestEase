@@ -1,57 +1,45 @@
-console.log('Main process working');
-console.log('main.js');
+console.log("Main process working");
+console.log("main.js");
 
-//best project
-const electron = require("electron");
-require('electron-reload')(__dirname, {
-    // Note that the path to electron may vary according to the main file
-    electron: require(`${__dirname}/node_modules/electron`)
-});
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
-const electronIpcMain = require('electron').ipcMain;
+const { app, BrowserWindow } = require("electron");
 const path = require("path");
-const url = require("url");
-
-let winone;
+require("electron-reload")(__dirname, {
+    // Note that the path to electron may vary according to the main file
+    electron: require(`${__dirname}/node_modules/electron`),
+});
 
 function createWindow() {
-    winone = new BrowserWindow({
-      autoHideMenuBar: true,
+    const winone = new BrowserWindow({
+        width: 1400,
+        autoHideMenuBar: true,
         webPreferences: {
-          nodeIntegration: true,          
-          nodeIntegrationInWorker: true,
+            nodeIntegration: true,
+            nodeIntegrationInWorker: true,
             nodeIntegrationInSubFrames: true,
             enableRemoteModule: true,
-            contextIsolation: false
-        }
+            contextIsolation: false,
+        },
     });
-    
-    winone.loadURL(url.format({
-        pathname: path.join(__dirname, './pages/home/home.html'),
-        protocol: 'file',
-        slashes: true
-    }))
-    
+
+    winone.loadFile(path.join(__dirname, "./pages/home/home.html"));
+
     winone.webContents.openDevTools();
 
-    winone.on('closed', () => {
+    winone.on("closed", () => {
         win = null;
-    })
+    });
 }
 
-
-
-app.on('ready', createWindow);
-
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
-        app.quit()
+app.on("window-all-closed", () => {
+    if (process.platform !== "darwin") {
+        app.quit();
     }
 });
 
-app.on('activate', () => {
-    if(win == null) {
-        createWindow()
-    }
+app.whenReady().then(() => {
+    createWindow();
+
+    app.on("activate", () => {
+        if (BrowserWindow.getAllWindows().length === 0) createMainWindow();
+    });
 });
