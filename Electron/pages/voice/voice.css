@@ -1,9 +1,18 @@
+*{
+    font-family: 'Poppins', sans-serif !important;
+}
 body{
     margin: 0;
+    overflow-y: hidden;
 }
 
 h1 {
     color: orange;
+}
+.voice{
+    background-image: url("../../assets/background.jpg");
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
 }
 
 .voice-container{
@@ -11,12 +20,34 @@ h1 {
     height: 100vh;
     display: flex;
     align-items: center;
-    /* background-color:#F6F5F6; */
-    background-image: url("../../assets/background.jpg");
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
 }
 
+.voice-navbar{
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 1;
+    background-color: #2ad5f138;
+    align-items: center;
+}
+
+.voice-menu-item{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.voice-menu-item:hover{
+    background-color: #2ad6f175;
+}
+.voice-menu-item > a{
+    color: white;
+    text-decoration: none;
+}
 .voice-button-group{
     display: grid;
     width: 50%;
@@ -42,7 +73,8 @@ h1 {
     min-width: 40%;
     border-radius: 5px;
     height: 40px;
-    font-size: 15px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .voice-header{
