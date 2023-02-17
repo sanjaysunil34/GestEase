@@ -10,7 +10,8 @@ require("electron-reload")(__dirname, {
 
 function createWindow() {
     const winone = new BrowserWindow({
-        width: 1400,
+        maxWidth: 850,
+        maxHeight: 600,
         autoHideMenuBar: true,
         webPreferences: {
             nodeIntegration: true,
