@@ -26,7 +26,7 @@ h1 {
     position: sticky;
     top: 0;
     width: 100%;
-    height: 40px;
+    height: 50px;
     z-index: 1;
     background-color: #2ad5f138;
     align-items: center;
@@ -41,7 +41,7 @@ h1 {
     cursor: pointer;
 }
 .gesture-menu-item:hover{
-    background-color: #2ad6f175;
+    transform: scale(1.1);
 }
 
 .gesture-menu-item > a{
@@ -59,13 +59,11 @@ h1 {
     margin: auto;
     height: 40%;
 }
-
 .gesture-buttons-container{
     margin-top: 20px;
     margin-bottom: 20px;
     align-self: center;
 }
-
 .gesture-buttons{
     background-color: #2AD5F1;
     color: white;
@@ -77,41 +75,4 @@ h1 {
     font-size: 16px;
     cursor: pointer;
     /* width: 150px; */
-}
-
-.gesture-header{
-    display: flex;
-    color: white;
-    background-color: #2AD5F1;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 150px;
-    width: 30%;
-    position: absolute;
-    top: 10%;
-    left: 10%;
-}
-
-.gesture-header-text{
-    width: 100%;
-    align-self: center;
-    font-size: 1.2rem;
-}
-
-.gesture-launch{
-    color: white;
-    background-color: #2AD5F1;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 150px;
-    width: 30%;
-    position: absolute;
-    bottom: 10%;
-    right: 10%;
-}
-
-.gesture-back-button{
-    background-color: #2AD5F1;
-    border: none;
-    color: white;
 }
