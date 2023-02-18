@@ -1,22 +1,52 @@
+*{
+    font-family: 'Poppins', sans-serif !important;
+}
 body{
     margin: 0;
+    overflow-y: hidden;
 }
-
 h1 {
     color: orange;
+}
+.voice{
+    background-image: url("../../assets/background.jpg");
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    height: 100vh;
 }
 
 .voice-container{
     text-align: -webkit-center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    /* background-color:#F6F5F6; */
-    background-image: url("../../assets/background.jpg");
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
+    position: relative;
+    top: 15%;    
 }
 
+.voice-navbar{
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+    background-color: #2ad5f138;
+    align-items: center;
+}
+
+.voice-menu-item{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.voice-menu-item:hover{
+    transform: scale(1.1);
+}
+.voice-menu-item > a{
+    color: white;
+    text-decoration: none;
+}
 .voice-button-group{
     display: grid;
     width: 50%;
@@ -39,10 +69,11 @@ h1 {
     color: white;
     border: none;
     font-weight: 700;
-    min-width: 40%;
+    min-width: 60%;
     border-radius: 5px;
     height: 40px;
-    font-size: 15px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .voice-header{

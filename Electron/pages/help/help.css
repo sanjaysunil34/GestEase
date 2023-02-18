@@ -10,18 +10,18 @@ h1 {
     color: orange;
 }
 
-.gesture{
+.help{
     background-image: url("../../assets/background.jpg");
     background-size: cover !important;
     background-repeat: no-repeat !important;
     height: 100vh;
 }
-.gesture-container{
+.help-container{
     text-align: -webkit-center;
     position: relative;
     top: 15%;    
 }
-.gesture-navbar{
+.help-navbar{
     display: flex;
     position: sticky;
     top: 0;
@@ -32,7 +32,7 @@ h1 {
     align-items: center;
 }
 
-.gesture-menu-item{
+.help-menu-item{
     color: white;
     font-size: 18px;
     font-weight: 500;
@@ -40,39 +40,11 @@ h1 {
     margin-left: 30px;
     cursor: pointer;
 }
-.gesture-menu-item:hover{
+.help-menu-item:hover{
     transform: scale(1.1);
 }
 
-.gesture-menu-item > a{
+.help-menu-item > a{
     color: white;
     text-decoration: none;
-}
-
-.gesture-button-group{
-    display: grid;
-    width: 50%;
-    border-radius: 20px;
-    background-color:white;
-    border: solid 10px #e6e6e6;
-    padding: 20px;
-    margin: auto;
-    height: 40%;
-}
-.gesture-buttons-container{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    align-self: center;
-}
-.gesture-buttons{
-    background-color: #2AD5F1;
-    color: white;
-    border: none;
-    font-weight: 700;
-    min-width: 60%;
-    border-radius: 5px;
-    height: 40px;
-    font-size: 16px;
-    cursor: pointer;
-    /* width: 150px; */
 }

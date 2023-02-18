@@ -1,0 +1,23 @@
+.gesture-manual-container{
+    background-image: url("../../assets/background.jpg");
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    min-height: 100vh;
+    color: #012749;
+    padding: 40px 0px;
+}
+.table-header{
+    background-color: white;
+}
+.table{
+    width: 60%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.733);
+}
+.table-body td{
+    font-weight: 500;
+    border: 0;
+}
+.table-body th{
+    border: 0;
+}
