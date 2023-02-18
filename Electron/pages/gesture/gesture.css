@@ -14,14 +14,12 @@ h1 {
     background-image: url("../../assets/background.jpg");
     background-size: cover !important;
     background-repeat: no-repeat !important;
+    height: 100vh;
 }
 .gesture-container{
     text-align: -webkit-center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    /* background-color:#F6F5F6; */
-    
+    position: relative;
+    top: 15%;    
 }
 .gesture-navbar{
     display: flex;

@@ -5,7 +5,6 @@ body{
     margin: 0;
     overflow-y: hidden;
 }
-
 h1 {
     color: orange;
 }
@@ -13,13 +12,13 @@ h1 {
     background-image: url("../../assets/background.jpg");
     background-size: cover !important;
     background-repeat: no-repeat !important;
+    height: 100vh;
 }
 
 .voice-container{
     text-align: -webkit-center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
+    position: relative;
+    top: 15%;    
 }
 
 .voice-navbar{
