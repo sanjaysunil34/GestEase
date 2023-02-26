@@ -26,7 +26,7 @@ h1 {
     position: sticky;
     top: 0;
     width: 100%;
-    height: 50px;
+    height: 30px;
     z-index: 1;
     background-color: #2ad5f138;
     align-items: center;
@@ -34,10 +34,10 @@ h1 {
 
 .gesture-menu-item{
     color: white;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 300;
     padding: 10px;
-    margin-left: 30px;
+    margin-left: 10px;
     cursor: pointer;
 }
 .gesture-menu-item:hover{

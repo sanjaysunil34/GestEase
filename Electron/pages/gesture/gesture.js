@@ -1,8 +1,6 @@
 var gestease_gesture = require('../../linkers/gesture');
 
 var gestureBtn = document.getElementById('gesture');
-// var voiceManualBtn = document.getElementById('voice-manual');
-
 
 gestureBtn.addEventListener('click',(e) => {
     const command = gestureBtn.innerText.toLowerCase();
