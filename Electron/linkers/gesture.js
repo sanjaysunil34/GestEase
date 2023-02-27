@@ -4,7 +4,7 @@ let child;
 function gestease_gesture(command) {
     if(command == 'start'){
         console.log('starting geastease - gesture');
-        child = spawn('python', ['../python_scripts/gesture/app.py']);
+        child = spawn('C:/Users/Hp/anaconda3/envs/Gestease-Gesture/python.exe', ['../python_scripts/gesture/app.py']);
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));

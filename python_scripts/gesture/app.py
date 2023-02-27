@@ -16,6 +16,7 @@ from model import PointHistoryClassifier
 import sys
 import os
 from key import bind
+from database import list_actions
 
 dirname = os.path.dirname(__file__)
 filename_keypoint = os.path.join(dirname, 'model/keypoint_classifier/keypoint_classifier_label.csv')
@@ -77,19 +78,25 @@ def main():
     point_history_classifier = PointHistoryClassifier()
 
     # Read labels ###########################################################
-    with open(filename_keypoint,
-              encoding='utf-8-sig') as f:
-        keypoint_classifier_labels = csv.reader(f)
-        keypoint_classifier_labels = [
-            row[0] for row in keypoint_classifier_labels
-        ]
-    with open(
-            filename_history,
-            encoding='utf-8-sig') as f:
-        point_history_classifier_labels = csv.reader(f)
-        point_history_classifier_labels = [
-            row[0] for row in point_history_classifier_labels
-        ]
+    # with open(filename_keypoint,
+    #           encoding='utf-8-sig') as f:
+    #     keypoint_classifier_labels = csv.reader(f)
+    #     keypoint_classifier_labels = [
+    #         row[0] for row in keypoint_classifier_labels
+    #     ]
+    # with open(
+    #         filename_history,
+    #         encoding='utf-8-sig') as f:
+    #     point_history_classifier_labels = csv.reader(f)
+    #     point_history_classifier_labels = [
+    #         row[0] for row in point_history_classifier_labels
+    #     ]
+    # print(keypoint_classifier_labels)
+
+    action_list=list_actions()
+    print(action_list)
+    keypoint_classifier_labels = action_list
+    point_history_classifier_labels=action_list
 
     # FPS Measurement ########################################################
     cvFpsCalc = CvFpsCalc(buffer_len=10)

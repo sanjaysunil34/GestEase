@@ -3,6 +3,7 @@ from time import sleep
 import time
 from functionality import openapp, sing,search_for
 from database import search_keys
+from database import search_keys
 
 # def bind(action):
 #     print(action)
