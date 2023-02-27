@@ -11,6 +11,7 @@
         "start": "electron ."
     },
     "dependencies": {
+        "electron-dl": "^3.5.0",
         "electron-reload": "^2.0.0-alpha.1",
         "python-shell": "^3.0.1"
     }
