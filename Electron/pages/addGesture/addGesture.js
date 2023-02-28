@@ -52,3 +52,10 @@ function stopRecording() {
 		.innerText = "Recording done!";
 	
 }
+
+var element = document.getElementById('addgesture-back');
+element.setAttribute('href', document.referrer);
+element.onclick = function() {
+  history.back();
+  return false;
+}
