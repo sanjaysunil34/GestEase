@@ -13,7 +13,7 @@ function startRecording(thisButton){
 			window.mediaRecorder = mediaRecorder;
 
 			mediaRecorder.start();
-			const duration = 11000;
+			const duration = 22000;
 			setTimeout(function(){
 				stopRecording();
 				thisButton.disabled = false;

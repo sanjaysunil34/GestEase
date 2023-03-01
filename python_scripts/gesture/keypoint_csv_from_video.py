@@ -105,10 +105,14 @@ def main():
 
     #  ########################################################################
 
+    parent = os.path.dirname(dirname)
+    main_dir = os.path.dirname(parent)
+    recording_file = os.path.join(main_dir, 'Electron/recording/irene.mp4')
 
-    cap = cv.VideoCapture(r'C:\Users\thoma\Documents\mini project\GestEase\Electron\recording\irene.mp4')
+
+    cap = cv.VideoCapture(recording_file)
     if not cap.isOpened():
-        print("Cannot video stream")
+        print("Cannot open video stream")
         exit()
 
     mode = 1
@@ -127,8 +131,8 @@ def main():
         i+= 1
         if i % 2==0:
             # begin--------------------------------------------------------------------
-            print(i/2)
-            cv.imshow('frame', frame)
+            # print(i/2) 
+            # cv.imshow('frame', frame)
             image = cv.flip(frame, 1)  # Mirror display
             debug_image = copy.deepcopy(image)
 
