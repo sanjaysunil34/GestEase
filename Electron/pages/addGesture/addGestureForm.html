@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="addGestureForm.css">
+	<title>Add Gesture</title>
+</head>
+
+<body>
+	<div class="addGestureForm">
+        <div class="addGestureForm-navbar">
+            <div class="addGestureForm-menu-item"><a id="addGestureForm-back">Back</a></div>
+        </div>
+        <div class="addGestureForm-container">
+            <div class="gesture-button-group">
+                <div class="filter">
+                    <!-- <label for="fname">Functionality</label> -->
+                    <input type="text" id="func" name="functionality" placeholder="Functionality">
+                </div>
+                
+                <div class="filter">
+                    <!-- <label for="lname">Keyboard Mapping</label> -->
+                    <input type="text" id="bind" name="key" placeholder="Keyboard Mapping">
+                </div>        
+
+                <div class="addGestureForm-buttons-container"><a><button class="addGestureForm-button" id="addGestureFormButton">Record Gesture</button></a></div>  
+            </div>
+        </div>
+    </div>
+	<script src="addGestureForm.js"></script>
+</body>
+
+</html>

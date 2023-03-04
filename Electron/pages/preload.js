@@ -16,6 +16,21 @@ let sendUrl  = (url) => {
     });
 }
 
+let sendTXTUrl  = (url) => {
+    console.log(url);
+    const filename = "file.txt";
+    const directory = path.join(__dirname,'../gestureFile/');
+    ipcRenderer.send('download',{
+        payload: {
+            url,
+            properties: {
+               filename,
+               directory
+            }
+        }
+    });
+}
+
 let gestureControl = (command) => {
     ipcRenderer.send('gesture',command);
 }
@@ -26,6 +41,7 @@ let voiceControl = (command) => {
 
 let indexBridge = {
     sendUrl,
+    sendTXTUrl,
     gestureControl,
     voiceControl
 }
