@@ -27,7 +27,7 @@ function createWindow() {
     //NOTE:
     //node integration must be false for security.
     // contextIsolation was false, set to true to enable ipc communication between renderer and main via preload script.
-    winone.setMenu(null);
+    //winone.setMenu(null);
     winone.loadFile(path.join(__dirname, "./pages/home/home.html"));
     winone.on("closed", () => { });
 }
