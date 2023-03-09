@@ -52,5 +52,5 @@ from database import search_keys
 def bind(action):
     print(action)
     key=search_keys(action.lower())
-    keyboard.press(key)
+    keyboard.press_and_release(key)
     sleep(2)
