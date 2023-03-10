@@ -8,6 +8,8 @@ import numpy as np
 import mediapipe as mp
 
 import os
+from database import write_keys
+from train_example1 import training
 
 dirname = os.path.dirname(__file__)
 filename_keypoint = os.path.join(dirname, 'model/keypoint_classifier/keypoint_classifier_label.csv')
@@ -55,13 +57,7 @@ def main():
 
 
     # Read labels ###########################################################
-    with open(filename_keypoint,
-              encoding='utf-8-sig') as f:
-        keypoint_classifier_labels = csv.reader(f)
-        keypoint_classifier_labels = [
-            row[0] for row in keypoint_classifier_labels
-        ]
-
+   
     #  ########################################################################
 
     parent = os.path.dirname(dirname)
@@ -123,6 +119,13 @@ def main():
  
     cap.release()
     cv.destroyAllWindows()
+    gesture_file = os.path.join(main_dir, 'Electron/gestureFile/file.txt')
+    f=open(gesture_file,"r")
+    action=f.readline()
+    keys=f.readline()
+    write_keys(action[:-1],keys)
+    training()
+
 
 
 def calc_bounding_rect(image, landmarks):
@@ -200,6 +203,7 @@ def logging_csv(number, mode, landmark_list):
             writer = csv.writer(f)
             writer.writerow([number, *landmark_list])
     return
+
 
 
 if __name__ == '__main__':
