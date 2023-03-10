@@ -57,13 +57,7 @@ def main():
 
 
     # Read labels ###########################################################
-    with open(filename_keypoint,
-              encoding='utf-8-sig') as f:
-        keypoint_classifier_labels = csv.reader(f)
-        keypoint_classifier_labels = [
-            row[0] for row in keypoint_classifier_labels
-        ]
-
+   
     #  ########################################################################
 
     parent = os.path.dirname(dirname)

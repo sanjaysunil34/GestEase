@@ -94,7 +94,7 @@ def main():
     # print(keypoint_classifier_labels)
 
     action_list=list_actions()
-    print(action_list)
+    #print(action_list)
     keypoint_classifier_labels = action_list
     point_history_classifier_labels=action_list
 
