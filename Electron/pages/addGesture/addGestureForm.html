@@ -23,9 +23,36 @@
                     <input type="text" id="func" name="functionality" placeholder="Functionality">
                 </div>
                 
-                <div class="filter">
+                <div class="keyboardMappingGroup">
                     <!-- <label for="lname">Keyboard Mapping</label> -->
-                    <input type="text" id="bind" name="key" placeholder="Keyboard Mapping">
+                    <!-- <input type="text" id="bind" name="key" placeholder="Keyboard Mapping"> -->
+                    <div class="keyboardMapping">
+                        <select id="key1" onchange="selectedKey1()" >
+                            <option >Choose key</option>
+                            <option>Ctrl</option>
+                            <option>Alt</option>
+                            <option>Win</option>
+                            <option>Shift</option>
+                        </select>
+                    </div>
+                    <div class="keyboardMapping">
+                        <select id="key2" onchange="selectedKey2()" >
+                            <option >Choose key</option>
+                            <option>Ctrl</option>
+                            <option>Alt</option>
+                            <option>Win</option>
+                            <option>Shift</option>
+                        </select>
+                    </div>
+                    <div class="keyboardMapping">
+                        <select id="key3" onchange="selectedKey3()" >
+                            <option >Choose key</option>
+                            <option>Ctrl</option>
+                            <option>Alt</option>
+                            <option>Win</option>
+                            <option>Shift</option>
+                        </select>
+                    </div>    
                 </div>        
 
                 <div class="addGestureForm-buttons-container"><a><button class="addGestureForm-button" id="addGestureFormButton">Record Gesture</button></a></div>  
