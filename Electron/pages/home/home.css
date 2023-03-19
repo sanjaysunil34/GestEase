@@ -1,23 +1,12 @@
 .home-container{
     text-align: -webkit-center;
-    height: 100vh;
     display: flex;
     align-items: center;
-    /* background-color:#F6F5F6; */
-    background-image: url("../../assets/background.jpg");
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
 }
-
 .button-group{
     display: grid;
     width: 50%;
     height: 40%;
-}
-.home-buttons-container{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    align-self: center;
 }
 .button{
     min-width: 40%;

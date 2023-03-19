@@ -25,6 +25,11 @@ body{
     padding: 20px;
     margin: auto;
 }
+.button-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-self: center;
+}
 .button{
     background-color: #2AD5F1;
     color: white;

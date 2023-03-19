@@ -3,44 +3,6 @@
     width: 50%;
     height: 40%;
 }
-.voice-buttons-container{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    align-self: center;
-}
 .button{
     min-width: 60%;
-}
-.voice-header{
-    display: flex;
-    color: white;
-    background-color: #2AD5F1;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 150px;
-    width: 30%;
-    position: absolute;
-    top: 10%;
-    left: 10%;
-}
-.voice-header-text{
-    width: 100%;
-    align-self: center;
-    font-size: 1.2rem;
-}
-.voice-launch{
-    color: white;
-    background-color: #2AD5F1;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 150px;
-    width: 30%;
-    position: absolute;
-    bottom: 10%;
-    right: 10%;
-}
-.voice-back-button{
-    background-color: #2AD5F1;
-    border: none;
-    color: white;
 }
