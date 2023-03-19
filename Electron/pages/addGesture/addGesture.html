@@ -7,18 +7,16 @@
 		content="IE=edge">
 	<meta name="viewport" content=
 		"width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="../style.css">
 	<link rel="stylesheet" href="addGesture.css">
-	
 	<title>Add Gesture</title>
 </head>
 
 <body>
-	<div class="body">
-        <div class="navbar">
-            <div class="menu-item"><a id="addgesture-back">Back</a></div>
+	<div class="addgesture">
+        <div class="addgesture-navbar">
+            <div class="addgesture-menu-item"><a id="addgesture-back">Back</a></div>
         </div>
-        <div class="container">
+        <div class="addgesture-container">
 			<div id="vid-recorder">
 				<video autoplay id="web-cam-container" >
 					Your app doesn't support
@@ -31,7 +29,7 @@
 				</div>
 		
 				<!-- This button will start the video recording -->
-				<button class="button" id="start-vid-recording"
+				<button class="addgesture-button" id="start-vid-recording"
 					onclick="startRecording(this)">
 					Start Recording
 				</button>
