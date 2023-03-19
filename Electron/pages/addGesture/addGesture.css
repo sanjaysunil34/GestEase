@@ -16,34 +16,6 @@ body{
     position: relative;
     top: 15%;    
 }
-.addgesture-navbar{
-    display: flex;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 30px;
-    z-index: 1;
-    background-color: #2ad5f138;
-    align-items: center;
-}
-
-.addgesture-menu-item{
-    color: white;
-    font-size: 16px;
-    font-weight: 300;
-    padding: 10px;
-    margin-left: 10px;
-    cursor: pointer;
-}
-.addgesture-menu-item:hover{
-    transform: scale(1.1);
-}
-
-.addgesture-menu-item > a{
-    color: white;
-    text-decoration: none;
-}
-
 .addgesture-button{
     background-color: #2AD5F1;
     color: white;
@@ -68,8 +40,6 @@ body{
 video {
 	background-color: rgba(245, 245, 245, 0.281);
 	display: block;
-	
 	width: 300px;
 	height: 240px;
-    /* border: solid 10px #e6e6e6; */
 }

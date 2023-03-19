@@ -20,33 +20,6 @@ h1 {
     position: relative;
     top: 15%;    
 }
-
-.voice-navbar{
-    display: flex;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 30px;
-    z-index: 1;
-    background-color: #2ad5f138;
-    align-items: center;
-}
-
-.voice-menu-item{
-    color: white;
-    font-size: 16px;
-    font-weight: 300;
-    padding: 10px;
-    margin-left: 10px;
-    cursor: pointer;
-}
-.voice-menu-item:hover{
-    transform: scale(1.1);
-}
-.voice-menu-item > a{
-    color: white;
-    text-decoration: none;
-}
 .voice-button-group{
     display: grid;
     width: 50%;
