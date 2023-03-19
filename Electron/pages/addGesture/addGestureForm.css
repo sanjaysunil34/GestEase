@@ -16,19 +16,11 @@
     align-self: center;
 }
 
-.addGestureForm-button{
-    background-color: #2AD5F1;
-    color: white;
-    border: none;
-    font-weight: 700;
-    border-radius: 5px;
-    height: 40px;
-    font-size: 16px;
-    cursor: pointer;
-    padding: auto 20px;
-    min-width: 40%;
+.button{
+  padding: auto 20px;
+  min-width: 40%;
 }
-.addGestureForm-button:disabled{
+.button:disabled{
     opacity: 0;
 }
 .filter {
