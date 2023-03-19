@@ -1,8 +1,114 @@
-.button-group{
+*{
+    font-family: 'Poppins', sans-serif !important;
+}
+body{
+    margin: 0;
+    overflow-y: hidden;
+}
+h1 {
+    color: orange;
+}
+.voice{
+    background-image: url("../../assets/background.jpg");
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    height: 100vh;
+}
+
+.voice-container{
+    text-align: -webkit-center;
+    position: relative;
+    top: 15%;    
+}
+
+.voice-navbar{
+    display: flex;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    z-index: 1;
+    background-color: #2ad5f138;
+    align-items: center;
+}
+
+.voice-menu-item{
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.voice-menu-item:hover{
+    transform: scale(1.1);
+}
+.voice-menu-item > a{
+    color: white;
+    text-decoration: none;
+}
+.voice-button-group{
     display: grid;
     width: 50%;
+    border-radius: 20px;
+    background-color:white;
+    border: solid 10px #e6e6e6;
+    padding: 20px;
+    margin: auto;
     height: 40%;
 }
-.button{
+
+.voice-buttons-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+.voice-buttons{
+    background-color: #2AD5F1;
+    color: white;
+    border: none;
+    font-weight: 700;
     min-width: 60%;
+    border-radius: 5px;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.voice-header{
+    display: flex;
+    color: white;
+    background-color: #2AD5F1;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 150px;
+    width: 30%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.voice-header-text{
+    width: 100%;
+    align-self: center;
+    font-size: 1.2rem;
+}
+
+.voice-launch{
+    color: white;
+    background-color: #2AD5F1;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 150px;
+    width: 30%;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
+
+.voice-back-button{
+    background-color: #2AD5F1;
+    border: none;
+    color: white;
 }
