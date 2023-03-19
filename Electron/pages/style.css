@@ -1,3 +1,25 @@
+*{
+    font-family: 'Poppins', sans-serif !important;
+}
+body{
+    margin: 0;
+}
+/* BODY */
+.body{
+    background-image: url("../assets/background.jpg");
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    height: 100vh;
+}
+/* CONTAINER */
+.container{
+    text-align: -webkit-center;
+    position: relative;
+    top: 15%;
+}
+/* BUTTON */
+
+/* NAVBAR */
 .navbar{
     display: flex;
     position: sticky;

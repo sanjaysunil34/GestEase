@@ -1,26 +1,3 @@
-*{
-    font-family: 'Poppins', sans-serif !important;
-}
-body{
-    margin: 0;
-    overflow-y: hidden;
-}
-
-h1 {
-    color: orange;
-}
-
-.gesture{
-    background-image: url("../../assets/background.jpg");
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    height: 100vh;
-}
-.gesture-container{
-    text-align: -webkit-center;
-    position: relative;
-    top: 15%;    
-}
 .gesture-button-group{
     display: grid;
     width: 50%;
