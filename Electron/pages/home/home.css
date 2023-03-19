@@ -1,14 +1,3 @@
-*{
-    font-family: 'Poppins', sans-serif !important;
-}
-body{
-    margin: 0;
-}
-
-h1 {
-    color: orange;
-}
-
 .home-container{
     text-align: -webkit-center;
     height: 100vh;
@@ -20,18 +9,11 @@ h1 {
     background-repeat: no-repeat !important;
 }
 
-.home-button-group{
+.button-group{
     display: grid;
     width: 50%;
-    background-color: white;
-    border: solid 10px #e6e6e6;
-    border-radius: 20px;
-    padding: 20px;
-    margin: auto;
     height: 40%;
-    
 }
-
 .home-buttons-container{
     margin-top: 20px;
     margin-bottom: 20px;

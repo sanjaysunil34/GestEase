@@ -18,6 +18,13 @@ body{
     top: 15%;
 }
 /* BUTTON */
+.button-group{
+    border-radius: 20px;
+    background-color:white;
+    border: solid 10px #e6e6e6;
+    padding: 20px;
+    margin: auto;
+}
 .button{
     background-color: #2AD5F1;
     color: white;

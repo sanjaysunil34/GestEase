@@ -1,11 +1,6 @@
-.gesture-button-group{
+.button-group{
     display: grid;
     width: 50%;
-    border-radius: 20px;
-    background-color:white;
-    border: solid 10px #e6e6e6;
-    padding: 20px;
-    margin: auto;
     height: 40%;
 }
 .gesture-buttons-container{
