@@ -9,14 +9,14 @@ var element = document.getElementById('addGestureFormButton');
 element.setAttribute('href', document.referrer);
 element.onclick = function() {
     var functionaility = document.getElementById('func').value;
-    // var binding = document.getElementById('bind').value;
-    // console.log(functionaility);
-    // console.log(binding);
-    // var res = functionaility.concat('\n');
-    // res = res.concat(binding);
-    // const blob = new Blob([res], {type: "text/plain"});
-    // const fileUrl = URL.createObjectURL(blob);
-    // window.Bridge.sendTXTUrl(fileUrl);
+    var binding = document.getElementById('bind').value;
+    console.log(functionaility);
+    console.log(binding);
+    var res = functionaility.concat('\n');
+    res = res.concat(binding);
+    const blob = new Blob([res], {type: "text/plain"});
+    const fileUrl = URL.createObjectURL(blob);
+    window.Bridge.sendTXTUrl(fileUrl);
     location.replace("./addGesture.html")
   return false;
 }
@@ -39,24 +39,24 @@ element.onclick = function() {
 //     zEvent.preventDefault();
 //   }
 // }
-const selectedKey1 = () => {
-  const key = document.getElementById("key1");
-  if(key.value !== "Choose key"){
+// const selectedKey1 = () => {
+//   const key = document.getElementById("key1");
+//   if(key.value !== "Choose key"){
 
-  }
-  console.log(key.value);
-}
-const selectedKey2 = () => {
-  const key = document.getElementById("key2");
-  if(key.value !== "Choose key"){
+//   }
+//   console.log(key.value);
+// }
+// const selectedKey2 = () => {
+//   const key = document.getElementById("key2");
+//   if(key.value !== "Choose key"){
 
-  }
-  console.log(key.value);
-}
-const selectedKey3 = () => {
-  const key = document.getElementById("key3");
-  if(key.value !== "Choose key"){
+//   }
+//   console.log(key.value);
+// }
+// const selectedKey3 = () => {
+//   const key = document.getElementById("key3");
+//   if(key.value !== "Choose key"){
 
-  }
-  console.log(key.value);
-}
+//   }
+//   console.log(key.value);
+// }
