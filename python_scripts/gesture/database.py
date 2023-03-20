@@ -1,5 +1,5 @@
 from tinydb import TinyDB, Query
-db = TinyDB('C:/Users/Hp/OneDrive/Documents/GitHub/GestEase/python_scripts/gesture/db.json')
+db = TinyDB('E:\project_final\GestEase\python_scripts\gesture\db.json')
 act=Query()
 
 actions_list=[]

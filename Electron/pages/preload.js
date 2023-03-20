@@ -16,6 +16,21 @@ let sendUrl  = (url) => {
     });
 }
 
+let sendImageUrl  = (url) => {
+    console.log(url);
+    const filename = "sanjay.jpg";
+    const directory = path.join(__dirname,'../images/');
+    ipcRenderer.send('download',{
+        payload: {
+            url,
+            properties: {
+               filename,
+               directory
+            }
+        }
+    });
+}
+
 let sendTXTUrl  = (url) => {
     console.log(url);
     const filename = "file.txt";
@@ -41,6 +56,7 @@ let voiceControl = (command) => {
 
 let indexBridge = {
     sendUrl,
+    sendImageUrl,
     sendTXTUrl,
     gestureControl,
     voiceControl
