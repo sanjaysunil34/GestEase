@@ -79,6 +79,7 @@ ipcMain.on("gesture",async (event, command) => {
             console.error(`stderr: ${data}`);
         });
         child.on('close', (code) => {
+            child.kill('SIGTERM');
             console.log(`child process exited with code ${code}`);
         });
     }else if(command == 'stop'){
