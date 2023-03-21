@@ -12,8 +12,8 @@ var winone;
 
 function createWindow() {
     winone = new BrowserWindow({
-        maxWidth: 850,
-        maxHeight: 600,
+        minWidth: 1064,
+        minHeight: 688,
         title: 'GestEaves',
         autoHideMenuBar: true,
         icon: appIcon,
