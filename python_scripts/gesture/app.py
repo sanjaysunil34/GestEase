@@ -21,7 +21,7 @@ from database import list_actions
 dirname = os.path.dirname(__file__)
 filename_keypoint = os.path.join(dirname, 'model/keypoint_classifier/keypoint_classifier_label.csv')
 filename_history = os.path.join(dirname, 'model/point_history_classifier/point_history_classifier_label.csv')
-print(filename_history,filename_keypoint)
+# print(filename_history,filename_keypoint)
 
 def get_args():
     parser = argparse.ArgumentParser()

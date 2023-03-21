@@ -12,3 +12,6 @@ gestureBtn.addEventListener('click',(e) => {
             break;
     }
 });
+
+
+

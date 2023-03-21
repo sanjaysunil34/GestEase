@@ -72,7 +72,8 @@ ipcMain.on("gesture",async (event, command) => {
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));
-            result.textContent = data.toString('utf8');
+            event.sender.send('gesture-executed', data.toString('utf8'));
+            //result.textContent = data.toString('utf8');
         });
         
         child.stderr.on('data', (data) => {
@@ -111,7 +112,7 @@ ipcMain.on("voice",async (event, command) => {
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));
-            result.textContent = data.toString('utf8');
+            //result.textContent = data.toString('utf8');
         });
         
         child.stderr.on('data', (data) => {
