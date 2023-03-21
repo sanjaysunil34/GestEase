@@ -12,8 +12,8 @@ var winone;
 
 function createWindow() {
     winone = new BrowserWindow({
-        maxWidth: 850,
-        maxHeight: 600,
+        minWidth: 1064,
+        minHeight: 688,
         title: 'GestEaves',
         autoHideMenuBar: true,
         icon: appIcon,
@@ -67,11 +67,12 @@ ipcMain.on("gesture",async (event, command) => {
     let child; 
     if(command == 'start'){
         console.log('STARTING GESTEASE - Gesture....');
-        child = spawn('C:/Users/Hp/anaconda3/envs/Gestease-Gesture/python.exe', ['../python_scripts/gesture/app.py']);
+        child = spawn('python', ['../python_scripts/gesture/app.py']);
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));
-            result.textContent = data.toString('utf8');
+            event.sender.send('gesture-executed', data.toString('utf8'));
+            //result.textContent = data.toString('utf8');
         });
         
         child.stderr.on('data', (data) => {
@@ -109,7 +110,7 @@ ipcMain.on("voice",async (event, command) => {
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));
-            result.textContent = data.toString('utf8');
+            //result.textContent = data.toString('utf8');
         });
         
         child.stderr.on('data', (data) => {

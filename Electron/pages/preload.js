@@ -39,6 +39,12 @@ let voiceControl = (command) => {
     ipcRenderer.send('voice',command);
 }
 
+ipcRenderer.on('gesture-executed', (event, data) => {
+    console.log(`Received data in renderer process: ${data}`);
+    const gestureExec = document.getElementById('gesture-executed');
+    gestureExec.innerHTML = data;
+});
+
 let indexBridge = {
     sendUrl,
     sendTXTUrl,

@@ -5,7 +5,7 @@ import tensorflow as tf
 import os
 dirname = os.path.dirname(__file__)
 filename = os.path.join(dirname, 'keypoint_classifier.tflite')
-print(filename)
+# print(filename)
 
 
 class KeyPointClassifier(object):

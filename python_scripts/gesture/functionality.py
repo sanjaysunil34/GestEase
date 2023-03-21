@@ -4,16 +4,16 @@ import time
 
 def openapp(action):
     app = action.split()
-    print(app)
+    # print(app)
     arr = list(app[2:])
     word = ""
     for i in arr:
         word = word+" "+i
-    print(word)
+    # print(word)
     keyboard.press_and_release('windows')
     time.sleep(1)
     for i in word.lower():
-        print(i)
+        # print(i)
         keyboard.press_and_release(i)
     time.sleep(1)
     keyboard.send('enter')
@@ -25,7 +25,7 @@ def sing(action):
     time.sleep(3)
     word = "https://www.youtube.com/results?search_query="
     for i in word.lower():
-        print(i)
+        # print(i)
         if(i == '_'):
             keyboard.press_and_release('shift+_')
         elif(i == '?'):
@@ -39,10 +39,10 @@ def sing(action):
     for i in arr:
         word = word + i + " "
     word = word[:-1]
-    print(word)
+    # print(word)
     time.sleep(1)
     for i in word.lower():
-        print(i)
+        # print(i)
         keyboard.press_and_release(i)
     time.sleep(3)
     keyboard.send('enter')
@@ -53,16 +53,16 @@ def sing(action):
 
 def search_for(action):
     app = action.split()
-    print(app)
+    # print(app)
     arr = list(app[2:])
     word = ""
     for i in arr:
         word = word+" "+i
-    print(word)
+    # print(word)
     keyboard.send('ctrl+l')
     time.sleep(1)
     for i in word:
-        print(i)
+        # print(i)
         keyboard.press_and_release(i)
 
     time.sleep(1)
