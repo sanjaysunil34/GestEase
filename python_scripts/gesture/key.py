@@ -50,7 +50,7 @@ from database import search_keys
     #     time.sleep(2)
 
 def bind(action):
-    print(action)
+    # print(action)
     key=search_keys(action.lower())
     keyboard.press_and_release(key)
     sleep(2)
