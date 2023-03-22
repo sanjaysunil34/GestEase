@@ -167,9 +167,8 @@ def main():
                 #print hand sign
                 # print(hand_sign_id,":",keypoint_classifier_labels[hand_sign_id],)
 
-                text = keypoint_classifier_labels[hand_sign_id]
-                print(text)
-                sys.stdout.flush()
+                print(keypoint_classifier_labels)
+                text = keypoint_classifier_labels[hand_sign_id]                
                 bind(text)
                 
                 # if hand_sign_id == 2:  # Point gesture
@@ -207,7 +206,7 @@ def main():
         debug_image = draw_info(debug_image, fps, mode, number)
 
         # Screen reflection #############################################################
-        # cv.imshow('Hand Gesture Recognition', debug_image)
+        cv.imshow('Hand Gesture Recognition', debug_image)
 
     cap.release()
     cv.destroyAllWindows()
