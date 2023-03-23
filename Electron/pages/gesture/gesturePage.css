@@ -9,13 +9,12 @@
 
 .grid-left{
     width: 50%;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.582);
     display: flex;
     align-items: center;
     flex-direction: column;
     padding-top: 50px;
     color: white;
-    opacity: 80%;
 }
 
 .backIcon{
@@ -70,6 +69,7 @@
     border-radius: 10px;
     padding: 20px;
     cursor: pointer;
+    min-width: 150px;
 }
 
 .gestureLaunchButton:hover{

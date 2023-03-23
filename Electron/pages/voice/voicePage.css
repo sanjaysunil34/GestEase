@@ -1,16 +1,20 @@
-.gestureBody{
+.voiceBody{
     display: flex;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+    height: 70%;
 }
 
 .grid-left{
-    width: 30%;
-    background-color: #A2CFD2;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.582);
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
     padding-top: 50px;
     color: white;
-    font-size: 25px;
-    font-weight: 900;
 }
 
 .backIcon{
@@ -18,68 +22,70 @@
     height: 50px;
     background-image: url('../../assets/backIcon.svg');
     background-size: 50px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
 
-.gestureIcon{
+.voiceIcon{
     width: 50px;
-    height: 50px;
-    background-image: url('../../assets/gestureIcon.svg');
+    height: 70px;
+    background-image: url('../../assets/appicon.png');
     background-size: 50px;
+    background-repeat: no-repeat;
 }
 
 .grid-right{
-    width:70%;
-    height: 100vh;
+    width:50%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    background-color: white;
 }
 
-.gestureSimpleButton{
+.voiceSimpleButton{
     text-align: center;
     border: 2px;
-    border-color: #86FDE8;
-    /* color: #A2CFD2; */
-    /* background-color: #92EBF1; */
+    border-color: #9DCFCB;
     border-style: solid;
     padding-top: 20px;
     margin-bottom: 20px;
-    border-radius: 35px;
+    border-radius: 12px;
     padding: 20px;
     cursor: pointer;
 }
 
-.gestureSimpleButton:hover{
-    background-color: #86FDE8;
+.voiceSimpleButton:hover{
+    background: linear-gradient(270deg, #6ADEE6 0.13%, #9DCFCB 118.58%);
 }
 
-.gestureLaunchButton{
+.voiceLaunchButton{
     text-align: center;
-    background: linear-gradient(90deg, #92EBF1 0%, #86FDE8 100%, #86FDE8 100%);
-    margin-top: 20px;
+    background: linear-gradient(270deg, #6ADEE6 0.13%, #9DCFCB 118.58%);
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
-    border-radius: 35px;
+    border-radius: 10px;
     padding: 20px;
     cursor: pointer;
+    min-width: 150px;
 }
 
-.gestureLaunchButton:hover{
-    /* background-color: #A2CFD2;    */
-}
-
-.gesture-stop-button{
-    background: #bd6c76;
-}
-
-.gesture-start-sidePane{
-    background: #bd6c76;
-}
-
-.gestureTitle{
+.voiceTitle{
     padding-top: 5px;
     font-size: 30px;
+    color: #6B3951;
+    font-family: Raleway;
+    font-weight: 700;
 }
-
+.voiceTagline{
+    color: #6B3951;
+    font-family: Raleway;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 80px;
+}
 .atag{
     text-decoration: none;
     color: black;

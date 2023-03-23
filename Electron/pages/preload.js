@@ -3,7 +3,7 @@ const path = require('path');
 
 let sendUrl  = (url) => {
     console.log(url);
-    const filename = "irene.mp4";
+    const filename = "recording.mp4";
     const directory = path.join(__dirname,'../recording/');
     ipcRenderer.send('download',{
         payload: {
