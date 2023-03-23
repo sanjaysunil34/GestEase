@@ -57,6 +57,7 @@
 
 .gestureSimpleButton:hover{
     background: linear-gradient(270deg, #6ADEE6 0.13%, #9DCFCB 118.58%);
+    color: white;
 }
 
 .gestureLaunchButton{
