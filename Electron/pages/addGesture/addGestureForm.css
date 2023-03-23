@@ -67,3 +67,83 @@ select {
   padding: 0 5px;
   margin: 0 10px 0 10px;
 }
+
+
+
+
+
+
+.backIcon{
+  width: 50px;
+  height: 50px;
+  background-image: url('../../assets/backIcon.svg');
+  background-size: 50px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.gestureBody{
+  display: flex;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 70%;
+  height: 70%;
+}
+
+.grid-left{
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.582);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 50px;
+  color: white;
+}
+
+.grid-right{
+  width:50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: white;
+}
+
+.gestureIcon{
+  width: 50px;
+  height: 70px;
+  background-image: url('../../assets/appicon.png');
+  background-size: 50px;
+  background-repeat: no-repeat;
+}
+
+.gestureTitle{
+  padding-top: 5px;
+  font-size: 30px;
+  color: #6B3951;
+  font-family: Raleway;
+  font-weight: 700;
+}
+
+.gestureSimpleButton{
+  text-align: center;
+  border: 2px;
+  border-color: #9DCFCB;
+  border-style: solid;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.gestureSimpleButton:hover{
+  background: linear-gradient(270deg, #6ADEE6 0.13%, #9DCFCB 118.58%);
+  color: white;
+}
+
+.atag{
+  text-decoration: none;
+  color: black;
+}
