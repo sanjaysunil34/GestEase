@@ -35,12 +35,19 @@
                     <div class="gestureTitle">Add Gesture</div>
                 </div>
                 <div class="grid-right">
-                    <div>
-                        <a href="../gesture_manual/gestureManual.html" class="atag">
-                        <div target="_blank" class="gestureSimpleButton">Gesture Manual</div>
-                         </a>
-                        <a href="../addGesture/addGestureForm.html" class="atag"><div class="gestureSimpleButton">Add new gesture</div></a>
-                        
+                    
+
+                    <div class="button-group">
+                        <label for="input">Task Name</label>
+                        <div class="filter">
+                            <input type="text" id="func" name="functionality" placeholder="Functionality">
+                        </div>
+                        <label for="input">Keyboard shortcut</label>
+                        <div class="filter">
+                            <input type="text" id="bind" name="key" placeholder="Keyboard Mapping">
+                        </div>
+                        <!-- <div class="button-container"><a><button class="button" id="addGestureFormButton">Record Gesture</button></a></div> -->
+                        <a class="atag"><div id="addGestureFormButton" class="gestureSimpleButton">Record Gesture</div></a>
                     </div>
                 </div>
             </div>

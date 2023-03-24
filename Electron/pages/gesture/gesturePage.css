@@ -73,10 +73,6 @@
     min-width: 150px;
 }
 
-.gestureLaunchButton:hover{
-    /* background-color: #A2CFD2;    */
-}
-
 .gesture-stop-button{
     background: #bd6c76;
 }

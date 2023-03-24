@@ -4,7 +4,6 @@
 .button-group {
   display: flex;
   flex-direction: column;
-  width: 50%;
 }
 .button {
   padding: auto 20px;
@@ -21,15 +20,15 @@
   display: flex;
   align-items: center;
   padding: 0 10px;
-  margin: 0 10px 20px 10px;
+  margin: 0 0px 20px 0px;
 }
 label {
   font-size: 18px;
   font-weight: bold;
   color: rgba(33, 75, 93, 0.5);
-  position: absolute;
   transition: 0.4s ease-in-out;
   margin-top: 2px;
+  margin-bottom: 10px;
 }
 input,
 select {
