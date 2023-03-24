@@ -6,7 +6,7 @@
         },
         "2": {
             "action": "close",
-            "keys": "alt+F4"
+            "keys": "alt + F4"
         },
         "3": {
             "action": "next",
@@ -26,7 +26,7 @@
         },
         "7": {
             "action": "decrease",
-            "keys": "left"
+            "keys": "down"
         },
         "8": {
             "action": "switch",
@@ -41,16 +41,12 @@
             "keys": "esc"
         },
         "11": {
-            "action": "windows",
-            "keys": "win"
+            "action": "select",
+            "keys": "ctrl + a"
         },
         "12": {
-            "action": "edwin",
-            "keys": "p"
-        },
-        "13": {
-            "action": "task",
-            "keys": "ctrl + shift + esc"
+            "action": "copy",
+            "keys": "ctrl + c"
         }
     }
 }

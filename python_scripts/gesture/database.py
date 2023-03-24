@@ -22,7 +22,7 @@ def write_keys(action,keys):
 
 def search_keys(action):
     temp=db.search(act.action==action)
-    # print(temp)
+    # print("action",temp[0]['action']," key: ",temp[0]['keys'])
     if temp:
         temp1=temp[0]
         return temp1['keys']

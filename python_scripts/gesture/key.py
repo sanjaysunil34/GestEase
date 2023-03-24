@@ -12,14 +12,14 @@ def notify(action):
     toaster.show_toast(msg=action.lower(),
                     title="Gesture detected",
                     icon_path=new,
-                    duration=5,
+                    duration=3,
                     threaded=True)
     # Wait for threaded notification to finish
     while toaster.notification_active(): sleep(0.1)
 
 def bind(action):
     # print(action)
-    notify(action)
+    
     key=search_keys(action.lower())
     keyboard.press_and_release(key)
-    sleep(2)
+    notify(action)

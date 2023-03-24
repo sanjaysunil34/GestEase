@@ -68,7 +68,7 @@ ipcMain.on("gesture",async (event, command) => {
     let result={};
     if(command == 'start'){
         console.log('STARTING GESTEASE - Gesture....');
-        child = spawn('python', ['../python_scripts/gesture/app.py']);
+        child = spawn('C:/Users/Hp/anaconda3/envs/Gestease-Gesture/python.exe', ['../python_scripts/gesture/app.py']);
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));
@@ -89,7 +89,7 @@ ipcMain.on("gesture",async (event, command) => {
         process.kill('SIGKILL');
     }else if(command == 'train'){
         console.log('TRAINING');
-        child = spawn('python', ['../python_scripts/gesture/keypoint_csv_from_video.py']);
+        child = spawn('C:/Users/Hp/anaconda3/envs/Gestease-Gesture/python.exe', ['../python_scripts/gesture/keypoint_csv_from_video.py']);
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));

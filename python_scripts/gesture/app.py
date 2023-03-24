@@ -168,8 +168,9 @@ def main():
                 # print(hand_sign_id,":",keypoint_classifier_labels[hand_sign_id],)
 
                 print(keypoint_classifier_labels)
+                print(hand_sign_id)
                 text = keypoint_classifier_labels[hand_sign_id]                
-                bind(text)
+                # bind(text)
                 
                 # if hand_sign_id == 2:  # Point gesture
                 if hand_sign_id == "Not applicable":    #disabling point history classification
