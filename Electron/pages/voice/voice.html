@@ -38,19 +38,23 @@
         <link rel="stylesheet" href="voicePage.css">        
     </head>
     <body>
-        <div class="gestureBody">
-            <div class="grid-left" id="grid-left">
-                <a href="../home/home.html"><div class="backIcon"></div></a>
-                <div class="gestureIcon"></div>
-                <div class="gestureTitle">Voice</div>
-            </div>
-            <div class="grid-right">
-                <div>
-                    <a class="atag" href="../voice_manual/voiceManual.html" target="_blank"><div class="gestureSimpleButton">Voice Manual</div></a>
-                    <div class="gestureLaunchButton" id="gesture">Start</div>
+        <div class="container">
+            <a href="../home/home.html"><div class="backIcon"></div></a>
+            <div class="voiceBody">
+                <div class="grid-left" id="grid-left">
+                    
+                    <div class="voiceIcon"></div>
+                    <div class="voiceTitle">Voice</div>
+                    <div class="voiceTagline">Control your PC with your voice.</div>
+                    <div class="voiceLaunchButton" id="voice">Start</div>
+                </div>
+                <div class="grid-right">
+                    <div>
+                        <a class="atag" href="../voice_manual/voiceManual.html" target="_blank"><div class="voiceSimpleButton">Voice Manual</div></a>
+                    </div>
                 </div>
             </div>
         </div>
-        <script type="module" src="gesture.js"></script>
+        <script type="module" src="voice.js"></script>
     </body>
 </html>

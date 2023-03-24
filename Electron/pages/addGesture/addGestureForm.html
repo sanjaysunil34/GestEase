@@ -15,51 +15,41 @@
 
 <body>
 	<div class="body">
-        <div class="navbar">
+        <!-- <div class="navbar">
             <div class="menu-item"><a id="addGestureForm-back">Back</a></div>
-        </div>
+        </div> -->
+        <a href="../gesture/gesture.html"><div class="backIcon"></div></a>
         <div class="container">
-            <div class="button-group">
+            <!-- <div class="button-group">
                 <div class="filter">
-                    <!-- <label for="fname">Functionality</label> -->
                     <input type="text" id="func" name="functionality" placeholder="Functionality">
                 </div>
                 <div class="filter">
-                   <!-- <label for="lname">Keyboard Mapping</label> -->
                     <input type="text" id="bind" name="key" placeholder="Keyboard Mapping">
                 </div>
-                
-                <!-- <div class="keyboardMappingGroup">
-                    <div class="keyboardMapping">
-                        <select id="key1" onchange="selectedKey1()" >
-                            <option >Choose key</option>
-                            <option>Ctrl</option>
-                            <option>Alt</option>
-                            <option>Win</option>
-                            <option>Shift</option>
-                        </select>
-                    </div>
-                    <div class="keyboardMapping">
-                        <select id="key2" onchange="selectedKey2()" >
-                            <option >Choose key</option>
-                            <option>Ctrl</option>
-                            <option>Alt</option>
-                            <option>Win</option>
-                            <option>Shift</option>
-                        </select>
-                    </div>
-                    <div class="keyboardMapping">
-                        <select id="key3" onchange="selectedKey3()" >
-                            <option >Choose key</option>
-                            <option>Ctrl</option>
-                            <option>Alt</option>
-                            <option>Win</option>
-                            <option>Shift</option>
-                        </select>
-                    </div>    
-                </div>         -->
-
                 <div class="button-container"><a><button class="button" id="addGestureFormButton">Record Gesture</button></a></div>  
+            </div> -->
+            <div class="gestureBody">
+                <div class="grid-left" id="grid-left">
+                    <div class="gestureIcon"></div>
+                    <div class="gestureTitle">Add Gesture</div>
+                </div>
+                <div class="grid-right">
+                    
+
+                    <div class="button-group">
+                        <label for="input">Task Name</label>
+                        <div class="filter">
+                            <input type="text" id="func" name="functionality" placeholder="Functionality">
+                        </div>
+                        <label for="input">Keyboard shortcut</label>
+                        <div class="filter">
+                            <input type="text" id="bind" name="key" placeholder="Keyboard Mapping">
+                        </div>
+                        <!-- <div class="button-container"><a><button class="button" id="addGestureFormButton">Record Gesture</button></a></div> -->
+                        <a class="atag"><div id="addGestureFormButton" class="gestureSimpleButton">Record Gesture</div></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
