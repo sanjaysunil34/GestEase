@@ -1,6 +1,23 @@
-.button{
-    padding: auto 20px;
-    min-width: 40%;
+.container{
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
+	align-items: center;
+}
+.record-button{
+    text-align: center;
+    background: linear-gradient(270deg, #6ADEE6 0.13%, #9DCFCB 118.58%);
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    min-width: 150px;
+	outline: none;
+	border: none;
+	color: white;
 }
 .button:disabled{
     opacity: 0;
@@ -12,8 +29,26 @@
 	width: fit-content;
 }
 video {
-	background-color: rgba(245, 245, 245, 0.281);
+	background-color: rgba(245, 245, 245, 0.5);
 	display: block;
-	width: 300px;
-	height: 240px;
+	width: 400px;
+	height: 340px;
 }
+
+.backIcon{
+	width: 50px;
+	height: 50px;
+	background-image: url('../../assets/backIcon.svg');
+	background-size: 50px;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+  }
+  #vid-recorder{
+	display: flex;
+    flex-direction: column;
+	justify-content: center;
+  }
+  button{
+	
+  }
