@@ -63,13 +63,19 @@ def main():
     parent = os.path.dirname(dirname)
     main_dir = os.path.dirname(parent)
     recording_file = os.path.join(main_dir, 'Electron/recording/recording.mp4')
-
+    print("hello")
     cap = cv.VideoCapture(recording_file)
     if not cap.isOpened():
         print("Cannot open video stream")
         exit()
 
     mode = 1
+
+    gesture_file = os.path.join(main_dir, 'Electron/gestureFile/file.txt')
+    f=open(gesture_file,"r")
+    action=f.readline()
+    keys=f.readline()
+    
 
     with open(csv_path_keypoint, "r") as scraped:
         number = int(scraped.readlines()[-1].split(',')[0])+1
@@ -83,12 +89,17 @@ def main():
         if not ret:
             print("Processing video stream completed.")
             break
+
+
         
         if image_saved == 0  and i > 250:
-            path_to_save = './images/' + 'gesture' + '.jpg'
-            print ('Creating...' + path_to_save)
+
+            path_to_save = ".\images\\" + action[:-1] + '.jpg'
+            #print(action)
             image_saved = 1
             cv.imwrite(path_to_save,frame)
+            
+            print ('Creating...' + path_to_save)
 
         i = i + 1
         
@@ -125,12 +136,10 @@ def main():
  
     cap.release()
     cv.destroyAllWindows()
-    gesture_file = os.path.join(main_dir, 'Electron/gestureFile/file.txt')
-    f=open(gesture_file,"r")
-    action=f.readline()
-    keys=f.readline()
+    
     write_keys(action[:-1],keys)
-    training()
+    
+    #training()
 
 
 

@@ -18,7 +18,8 @@ def list_actions():
     # print(actions_list)
     return actions_list
 def write_keys(action,keys):
-    db.insert({'action': action, 'keys': keys})
+    image = action + '.jpg'
+    db.insert({'action': action, 'keys': keys, 'image': image})
 
 def search_keys(action):
     temp=db.search(act.action==action)
