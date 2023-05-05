@@ -3,6 +3,8 @@ const path = require("path");
 const fs = require("fs");
 const {download} = require('electron-dl');
 const { spawn } = require('child_process');
+const treeKill = require('tree-kill');
+const { exit } = require("process");
 require("electron-reload")(__dirname, {
     // Note that the path to electron may vary according to the main file
     electron: require(`${__dirname}/node_modules/electron`),
@@ -30,7 +32,7 @@ function createWindow() {
     // contextIsolation was false, set to true to enable ipc communication between renderer and main via preload script.
     //winone.setMenu(null);
     winone.loadFile(path.join(__dirname, "./pages/home/home.html"));
-    winone.on("closed", () => { });
+    winone.on("closed", () => { exit()});
 }
 
 const isDebug =
@@ -63,18 +65,16 @@ ipcMain.on("download",async (event, {payload}) => {
     
 });
 
+let child; 
+let pid;
 ipcMain.on("gesture",async (event, command) => {
-    console.log(command);
-    let child; 
-    let result={};
     if(command == 'start'){
         console.log('STARTING GESTEASE - Gesture....');
         child = spawn('python', ['../python_scripts/gesture/app.py']);
-
+        console.log("When initialized \n\n");
+        console.log(child)
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));
-            // event.sender.send('gesture-executed', data.toString('utf8'));
-            //result.textContent = data.toString('utf8');
         });
         
         child.stderr.on('data', (data) => {
@@ -83,18 +83,26 @@ ipcMain.on("gesture",async (event, command) => {
         child.on('close', (code) => {
             child.kill('SIGTERM');
             console.log(`child process exited with code ${code}`);
+            
         });
     }else if(command == 'stop'){
-        console.log('stopping gestease');
-        child.stdin.pause();
-        process.kill('SIGKILL');
+        console.log('stopping gestease' );
+        console.log(child)
+        if (child) {
+            treeKill(child.pid, "SIGTERM", (err) => {
+              if (err) {
+                console.error(err);
+              } else {
+                console.log("Child process terminated successfully");
+              }
+            });
+          }
     }else if(command == 'train'){
         console.log('TRAINING');
         child = spawn('python', ['../python_scripts/gesture/keypoint_csv_from_video.py']);
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));
-            // result.textContent = data.toString('utf8');
         });
 
         child.stderr.on('data', (data) => {
