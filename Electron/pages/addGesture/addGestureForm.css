@@ -4,6 +4,7 @@
 .button-group {
   display: flex;
   flex-direction: column;
+  width: 80%;
 }
 .button {
   padding: auto 20px;

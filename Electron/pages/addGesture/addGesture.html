@@ -16,9 +16,39 @@
 <body>
 	<div class="body">
         <div class="navbar">
-            <div class="menu-item"><a id="addgesture-back">Back</a></div>
+            <div class="menu-item"><a href="./addGestureForm.html" id="addGesture-back">Back</a></div>
         </div>
-        <div class="container">
+
+		<div class="container">
+			<div class="gestureBody">
+				<div id="vid-recorder">
+					<div class="grid-left" id="grid-left">
+						<video class="video" autoplay id="web-cam-container" >
+							Your app doesn't support
+							the video tag
+						</video>
+						<canvas class="canvas" style="display: none; height: 400px;width: 400px;"></canvas>
+					</div>
+					<div class="grid-right">
+						
+						<div class="grid-right-background">
+							<div class="recording" id="vid-record-status">
+								Click the "Start video Recording"
+								button to start recording
+							</div>
+					
+							<!-- This button will start the video recording -->
+							<button class="button" id="start-vid-recording"
+								onclick="startRecording(this)">
+								Start Recording
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+
+        <!-- <div class="container">
 			<div id="vid-recorder">
 				<video class="video" autoplay id="web-cam-container" >
 					Your app doesn't support
@@ -31,13 +61,13 @@
 					button to start recording
 				</div>
 		
-				<!-- This button will start the video recording -->
+				This button will start the video recording
 				<button class="button" id="start-vid-recording"
 					onclick="startRecording(this)">
 					Start Recording
 				</button>
 			</div>
-        </div>
+        </div> -->
     </div>
 	<script src="addGesture.js"></script>
 </body>

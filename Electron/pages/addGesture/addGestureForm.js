@@ -1,11 +1,12 @@
-var element = document.getElementById('addGestureForm-back');
-element.setAttribute('href', document.referrer);
-element.onclick = function() {
-  history.back();
-  return false;
-}
+// var element = document.getElementById('addGestureForm-back');
+// element.setAttribute('href', document.referrer);
+// element.onclick = function() {
+//   history.back();
+//   return false;
+// }
 
 var element = document.getElementById('addGestureFormButton');
+console.log('Hi');
 element.setAttribute('href', document.referrer);
 element.onclick = function() {
     var functionaility = document.getElementById('func').value;
