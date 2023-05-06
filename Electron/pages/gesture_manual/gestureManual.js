@@ -30,8 +30,21 @@ const gestures = [{
     "action": "Switch tabs"
 }];
 
-for (let index = 0; index < gestures.length; index++) {
-    let rowContent = "<tr><th scope='row'>" + gestures[index]["img"]+ "</th><td>" + gestures[index]["action"] + "</td></tr>";
-    let row = tableRef.insertRow(tableRef.rows.length);
-    row.innerHTML = rowContent;    
-}
+
+window.Bridge.getData().then((data) => {
+    let dbdata = JSON.parse(data);
+    dbdata = dbdata["_default"]
+    let ids = Object.keys(dbdata)
+    console.log(ids);
+
+    ids.forEach((id) => {
+        console.log(dbdata[id]);
+        let rowContent = "<tr><th scope='row'><img width='200' src=\"../../images/" + dbdata[id]["image"]+ "\"/></th><td>" + dbdata[id]["action"] + "</td></tr>";
+        let row = tableRef.insertRow(tableRef.rows.length);
+        row.innerHTML = rowContent;
+    }) 
+        
+        
+    
+});
+

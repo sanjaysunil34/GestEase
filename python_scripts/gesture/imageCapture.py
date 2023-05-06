@@ -25,5 +25,5 @@ while True:
         count += 1
         print("Close")
         break
-cam.release
-cv.destroyAllWindows
+cam.release()
+cv.destroyAllWindows()
