@@ -72,7 +72,7 @@ ipcMain.on("gesture",async (event, command) => {
         console.log('STARTING GESTEASE - Gesture....');
         child = spawn('python', ['../python_scripts/gesture/app.py']);
         console.log("When initialized \n\n");
-        console.log(child)
+        // console.log(child)
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));
         });
