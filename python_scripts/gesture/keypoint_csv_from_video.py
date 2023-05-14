@@ -9,7 +9,7 @@ import mediapipe as mp
 
 import os
 from database import write_keys
-from train_example1 import training
+from custom_training import training
 
 dirname = os.path.dirname(__file__)
 filename_keypoint = os.path.join(dirname, 'model/keypoint_classifier/keypoint_classifier_label.csv')
@@ -139,7 +139,7 @@ def main():
     
     write_keys(action[:-1],keys)
     
-    #training()
+    training()
 
 
 

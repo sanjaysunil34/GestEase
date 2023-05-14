@@ -20,6 +20,6 @@ def notify(action):
 def bind(action):
     # print(action)
     notify(action)
-    key=search_keys(action.lower())
+    key = search_keys(action.lower())
     keyboard.press_and_release(key)
-    sleep(2)
+    #sleep(2)

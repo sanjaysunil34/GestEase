@@ -66,13 +66,10 @@ ipcMain.on("download",async (event, {payload}) => {
 });
 
 let child; 
-let pid;
 ipcMain.on("gesture",async (event, command) => {
     if(command == 'start'){
         console.log('STARTING GESTEASE - Gesture....');
-        child = spawn('python', ['../python_scripts/gesture/app.py']);
-        console.log("When initialized \n\n");
-        console.log(child)
+        child = spawn('python', ['../python_scripts/gesture/app-test.py']);
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));
         });
@@ -85,9 +82,7 @@ ipcMain.on("gesture",async (event, command) => {
             console.log(`child process exited with code ${code}`);
             
         });
-    }else if(command == 'stop'){
-        console.log('stopping gestease' );
-        console.log(child)
+    }else if(command == 'stop'){        
         if (child) {
             treeKill(child.pid, "SIGTERM", (err) => {
               if (err) {
