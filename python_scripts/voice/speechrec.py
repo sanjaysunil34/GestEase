@@ -12,12 +12,15 @@ def Main():
     try:
         with sr.Microphone() as source:
             print(datetime.now().time(), " Listening....")
+            sys.stdout.flush()
             audio = r.listen(source)
             print(datetime.now().time(), " Recognizing....")
+            sys.stdout.flush()
             r.adjust_for_ambient_noise(source)
-            text = r.recognize(audio)
+            text = r.recognize_google(audio)
             print(text)
             print(datetime.now().time(), "Text : ", text.lower())
+            sys.stdout.flush()
 
             if len(text) == 0:
                 Main()
@@ -34,10 +37,9 @@ def Main():
     except Exception as e:
         Main()
         print(e)
-Main()
 
-# command = sys.argv[1]
+command = sys.argv[1]
 
-# if command == "start":
-#     Main()
-#     sys.stdout.flush()
+if command == "start":
+    Main()
+    sys.stdout.flush()
