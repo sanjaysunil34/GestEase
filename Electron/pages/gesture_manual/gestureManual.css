@@ -2,7 +2,7 @@
     background-image: url("../../assets/page-bg.png");
     background-size: cover !important;
     background-repeat: no-repeat !important;
-    min-height: 100vh;
+    height: 100vh;
     color: #012749;
     padding: 40px 0px;
 }
@@ -18,11 +18,17 @@
 .table-header{
     background-color: white;
 }
+.table-container{
+    height: 90vh;
+    overflow-y: auto;
+}
 .table{
-    width: 60%;
+    width: 40%;
+    height: 300px;
     margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.733);
     text-align: center;
+    overflow: auto;
 }
 .table-body td{
     font-weight: 500;

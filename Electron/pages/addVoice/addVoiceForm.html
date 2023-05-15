@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="addVoiceForm.css">
+	
+	<title>Add Voice Commands</title>
+</head>
+
+<body>
+	<div class="body">
+		<div class="container">
+        <!-- <div class="navbar">
+            <div class="menu-item"><a href="./addGestureForm.html" id="addGesture-back">Back</a></div>
+        </div> -->
+		<a href="../voice/voice.html" id="addGesture-back"><div class="backIcon"></div></a>
+
+		<div class="voiceBody">
+            <div class="grid-left" id="grid-left">
+                <div class="voiceIcon"></div>
+                <div class="voiceTitle">Add Voice Commands</div>
+            </div>
+            <div class="grid-right">
+                
+
+                <div class="button-group">
+                    <label for="input">Task Name</label>
+                    <div class="filter">
+                        <input type="text" id="func" name="functionality" placeholder="Functionality">
+                    </div>
+                    <label for="input">Keyboard shortcut</label>
+                    <div class="filter">
+                        <input type="text" id="bind" name="key" placeholder="Keyboard Mapping">
+                    </div>
+                    <!-- <div class="button-container"><a><button class="button" id="addGestureFormButton">Record Gesture</button></a></div> -->
+                    <a class="atag"><div id="addVoiceFormButton" class="voiceSimpleButton">Add Voice Command</div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- <div class="container">
+			<div id="vid-recorder">
+				<video class="video" autoplay id="web-cam-container" >
+					Your app doesn't support
+					the video tag
+				</video>
+				<canvas class="canvas" style="display: none; height: 400px;width: 400px;"></canvas>
+		
+				<div class="recording" id="vid-record-status">
+					Click the "Start video Recording"
+					button to start recording
+				</div>
+		
+				This button will start the video recording
+				<button class="button" id="start-vid-recording"
+					onclick="startRecording(this)">
+					Start Recording
+				</button>
+			</div>
+        </div> -->
+    </div>
+	<script src="addVoiceForm.js"></script>
+</body>
+
+</html>
