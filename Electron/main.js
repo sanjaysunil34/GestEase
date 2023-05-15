@@ -151,7 +151,7 @@ ipcMain.on("voice",async (event, command) => {
     }
 });
 
-function openFile() {
+function openFileGesture() {
     return new Promise((resolve, reject) => {
         fs.readFile("../python_scripts/gesture/db.json", "utf-8", (error, data) => {
             if (error) {
@@ -165,10 +165,36 @@ function openFile() {
     });
 }
 
-ipcMain.handle('load-file', async (event, message) => {
-    return await openFile()
+function openFileVoice() {
+    return new Promise((resolve, reject) => {
+        fs.readFile("../python_scripts/voice/db.json", "utf-8", (error, data) => {
+            if (error) {
+                // console.log('reject: ' + error); // Testing
+                reject(error);
+            } else {
+                console.log('resolve: ' + data); // Testing
+                resolve(data)
+            }
+        });
+    });
+}
+
+ipcMain.handle('load-file-gesture', async (event, message) => {
+    return await openFileGesture()
         .then((data) => {
-            console.log('handle: ' + data); // Testing
+            // console.log('handle: ' + data); // Testing
+            return data;
+        })
+        .catch((error) => {
+            console.log('handle error: ' + error); // Testing
+            return 'Error Loading Log File';
+        })
+});
+
+ipcMain.handle('load-file-voice', async (event, message) => {
+    return await openFileVoice()
+        .then((data) => {
+            // console.log('handle: ' + data); // Testing
             return data;
         })
         .catch((error) => {
