@@ -1,4 +1,5 @@
 import os
+import sys
 from tinydb import TinyDB, Query
 
 dirname = os.path.dirname(__file__)
@@ -19,11 +20,13 @@ def list_actions():
     return actions_list
 
 def write_keys(action,keys):
-    image = action + '.jpg'
-    db.insert({'action': action, 'keys': keys, 'image': image})
+    image = action.lower() + '.jpg'
+    db.insert({'action': action.lower(), 'keys': keys, 'image': image})
     
 def search_keys(action):
     temp=db.search(act.action==action)
+    print(temp)
+    sys.stdout.flush()
     if temp:
         temp1=temp[0]
         return temp1['keys']
