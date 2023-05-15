@@ -17,6 +17,6 @@ element.onclick = function() {
     const fileUrl = URL.createObjectURL(blob);
     window.Bridge.sendTXTUrl(fileUrl);
     window.Bridge.voiceControl("voice_train");
-    // location.replace("../voice/voice.html")
+    location.replace("../voice/voice.html");
   return false;
 }
