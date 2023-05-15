@@ -90,3 +90,14 @@
     text-decoration: none;
     color: black;
 }
+.hide-start{
+    display: none;
+}       
+.voiceLaunchButton:hover + .hide-start {
+    display: block;
+    /* position: absolute; */
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+    padding: 15px;
+}
