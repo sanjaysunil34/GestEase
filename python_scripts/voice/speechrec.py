@@ -2,9 +2,9 @@ import speech_recognition as sr
 from datetime import datetime
 from key import bind
 import sys
+from database import list_actions
 
-keywords = ['play', 'pause', 'increase volume', 'decrease volume', 'full screen', 'exit full sreen', 'mute', 'close',
-            'go back', 'forward', 'sing', 'present', 'down', 'next', 'previous', 'ok']
+keywords=list_actions()
 
 
 def Main():
@@ -15,7 +15,8 @@ def Main():
             audio = r.listen(source)
             print(datetime.now().time(), " Recognizing....")
             r.adjust_for_ambient_noise(source)
-            text = r.recognize_google(audio)
+            text = r.recognize(audio)
+            print(text)
             print(datetime.now().time(), "Text : ", text.lower())
 
             if len(text) == 0:
@@ -33,10 +34,10 @@ def Main():
     except Exception as e:
         Main()
         print(e)
+Main()
 
+# command = sys.argv[1]
 
-command = sys.argv[1]
-
-if command == "start":
-    Main()
-    sys.stdout.flush()
+# if command == "start":
+#     Main()
+#     sys.stdout.flush()
