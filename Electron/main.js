@@ -70,7 +70,7 @@ ipcMain.on("gesture",async (event, command) => {
     if(command == 'start'){
         console.log('STARTING GESTEASE - Gesture....');
 
-        child = spawn('C:/Users/Hp/anaconda3/envs/Gestease-Gesture/python.exe', ['../python_scripts/gesture/app-test.py']);
+        child = spawn('python', ['../python_scripts/gesture/app-test.py']);
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));
@@ -114,7 +114,11 @@ ipcMain.on("gesture",async (event, command) => {
 ipcMain.on("voice",async (event, command) => {
     if(command == 'start'){
         console.log('STARTING GESTEASE - Voice....');
-        child = spawn('python', ['../python_scripts/voice/speechrec.py', "start"]);
+        //var loc = window.location.pathname;
+        //console.log(path.resolve(__dirname, '..'));
+        var parent = path.resolve(__dirname, '..');
+        var reqPath = parent + '\\python_scripts\\voice\\speechrec.py'
+        child = spawn('python', [reqPath, "start"]);
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));

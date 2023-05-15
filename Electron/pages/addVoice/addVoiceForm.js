@@ -10,6 +10,6 @@ element.onclick = function() {
     const blob = new Blob([res], {type: "text/plain"});
     const fileUrl = URL.createObjectURL(blob);
     window.Bridge.sendTXTUrl(fileUrl);
-    location.replace("./addGesture.html")
+    //location.replace("../voice/voice.html")
   return false;
 }
