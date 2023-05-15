@@ -4,14 +4,15 @@ from tinydb import TinyDB, Query
 
 dirname = os.path.dirname(__file__)
 parent = os.path.dirname(dirname)
-main_dir = os.path.dirname(parent)
-db_path = os.path.join(os.getcwd())
-path_str = db_path.split('electron')
-print(path_str[0])
-new = path_str[0]+'\python_scripts\\voice\db.json'
-# print(new)
+# main_dir = os.path.dirname(parent)
+# db_path = os.path.join(os.getcwd())
+# path_str = db_path.split('electron')
 
-db = TinyDB(new)
+new_path = dirname +'\db.json'
+print("path : " + new_path)
+sys.stdout.flush()
+
+db = TinyDB(new_path)
 act = Query()
 actions_list=[]
 
