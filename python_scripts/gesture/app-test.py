@@ -2,15 +2,10 @@ import csv
 import copy
 import argparse
 import itertools
-
 import joblib
-
 import cv2 as cv
 import numpy as np
 import mediapipe as mp
-
-#from utils import CvFpsCalc
-
 import os
 from key import bind
 from database import list_actions
@@ -53,7 +48,7 @@ def main():
     min_detection_confidence = args.min_detection_confidence
     min_tracking_confidence = args.min_tracking_confidence
 
-    use_brect = True
+    # use_brect = True
 
     # Camera preparation ###############################################################
     cap = cv.VideoCapture(cap_device)
@@ -69,22 +64,15 @@ def main():
         min_tracking_confidence=min_tracking_confidence,
     )
 
-
     keypoint_classifier = KeyPointClassifier
 
     action_list = list_actions()
     keypoint_classifier_labels = action_list
-    
-
-    # FPS Measurement ########################################################
-    #cvFpsCalc = CvFpsCalc(buffer_len=10)
 
     #  ########################################################################
     mode = 0
 
     while True:
-        #fps = cvFpsCalc.get()
-
         # Process Key (ESC: end) #################################################
         key = cv.waitKey(10)
         if key == 27:  # ESC
@@ -106,10 +94,7 @@ def main():
         #  ####################################################################
         if results.multi_hand_landmarks is not None:
             for hand_landmarks, handedness in zip(results.multi_hand_landmarks,
-                                                  results.multi_handedness):
-                # Bounding box calculation
-                #brect = calc_bounding_rect(debug_image, hand_landmarks)
-                
+                                                  results.multi_handedness):                
                 # Landmark calculation
                 landmark_list = calc_landmark_list(debug_image, hand_landmarks)
                 
@@ -126,21 +111,8 @@ def main():
 
                 #print(keypoint_classifier_labels)
                 text = keypoint_classifier_labels[hand_sign_id]     
-                print(text)           
+                #print(text)           
                 bind(text)
-                
-                # Drawing part
-                # debug_image = draw_bounding_rect(use_brect, debug_image, brect)
-                
-                # debug_image = draw_info_text(
-                #     debug_image,
-                #     brect,
-                #     handedness,
-                #     keypoint_classifier_labels[hand_sign_id],
-                # )
-        
-        # Screen reflection #############################################################
-        #cv.imshow('Hand Gesture Recognition', debug_image)
 
     cap.release()
     cv.destroyAllWindows()
@@ -219,55 +191,18 @@ def pre_process_landmark(landmark_list):
 
     return temp_landmark_list
 
-
 dirname = os.path.dirname(__file__)
 csv_path_keypoint = os.path.join(dirname, 'model/keypoint_classifier/keypoint.csv')
 
 
 def logging_csv(number, mode, landmark_list):
-
     if mode == 0:
         pass
     if mode == 1 and (0 <= number <= 9):
         with open(csv_path_keypoint, 'a', newline="") as f:
             writer = csv.writer(f)
             writer.writerow([number, *landmark_list])
-    
     return
-
-
-def draw_landmarks(image, landmark_point):
-    pass
-
-def draw_bounding_rect(use_brect, image, brect):
-    if use_brect:
-        # Outer rectangle
-        cv.rectangle(image, (brect[0], brect[1]), (brect[2], brect[3]),
-                     (0, 0, 0), 1)
-
-    return image
-
-
-def draw_info_text(image, brect, handedness, hand_sign_text):
-    cv.rectangle(image, (brect[0], brect[1]), (brect[2], brect[1] - 22),
-                 (0, 0, 0), -1)
-
-    info_text = handedness.classification[0].label[0:]
-    if hand_sign_text != "":
-        info_text = info_text + ':' + hand_sign_text
-    cv.putText(image, info_text, (brect[0] + 5, brect[1] - 4),
-               cv.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1, cv.LINE_AA)
-
-    return image
-
-
-def draw_info(image, fps, mode, number):
-    cv.putText(image, "FPS:" + str(fps), (10, 30), cv.FONT_HERSHEY_SIMPLEX,
-               1.0, (0, 0, 0), 4, cv.LINE_AA)
-    cv.putText(image, "FPS:" + str(fps), (10, 30), cv.FONT_HERSHEY_SIMPLEX,
-               1.0, (255, 255, 255), 2, cv.LINE_AA)
-
-    return image
 
 if __name__ == '__main__':
     main()

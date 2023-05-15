@@ -3,6 +3,7 @@ from time import sleep
 from database import search_keys
 import os
 from win10toast import ToastNotifier
+import sys
 
 def notify(action):
     dirname = os.path.dirname(__file__)
@@ -12,14 +13,19 @@ def notify(action):
     toaster.show_toast(msg=action.lower(),
                     title="Gesture detected",
                     icon_path=new,
-                    duration=5,
-                    threaded=True)
+                    duration=1,
+                    threaded=True)  
     # Wait for threaded notification to finish
     while toaster.notification_active(): sleep(0.1)
 
 def bind(action):
     # print(action)
-    notify(action)
+    
+    # print("action : " + action.lower())
+    # sys.stdout.flush()
     key = search_keys(action.lower())
+    notify(action)
+    # print(key)
+    # sys.stdout.flush()
     keyboard.press_and_release(key)
     #sleep(2)
