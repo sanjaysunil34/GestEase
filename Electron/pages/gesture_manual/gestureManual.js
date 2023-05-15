@@ -39,7 +39,7 @@ window.Bridge.getData().then((data) => {
 
     ids.forEach((id) => {
         console.log(dbdata[id]);
-        let rowContent = "<tr><th scope='row'><img width='200' src=\"../../images/" + dbdata[id]["image"]+ "\"/></th><td style='vertical-align: middle'><div>" + dbdata[id]["action"] + "</div></td></tr>";
+        let rowContent = "<tr class='table-row'><th scope='row'><img width='150' height='150' src=\"../../images/" + dbdata[id]["image"]+ "\"/></th><td style='vertical-align: middle'><div>" + dbdata[id]["action"] + "</div></td></tr>";
         let row = tableRef.insertRow(tableRef.rows.length);
         row.innerHTML = rowContent;
     }) 

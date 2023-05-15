@@ -37,6 +37,13 @@ def Main():
     except Exception as e:
         Main()
         print(e)
+# Main()
+
+command = sys.argv[1]
+
+if command == "start":
+    Main()
+    sys.stdout.flush()
 
 command = sys.argv[1]
 

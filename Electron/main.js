@@ -131,6 +131,20 @@ ipcMain.on("voice",async (event, command) => {
         child.on('close', (code) => {
             console.log(`child process exited with code ${code}`);
         });
+    }else if(command == 'voice_train'){
+        console.log('NEW VOICE COMMAND ADDING');
+        child = spawn('python', ['../python_scripts/voice/add_new.py']);
+
+        child.stdout.on('data', function (data) {
+            console.log("Python response: ", data.toString('utf8'));
+        });
+
+        child.stderr.on('data', (data) => {
+            console.error(`stderr: ${data}`);
+        });
+        child.on('close', (code) => {
+            console.log(`child process exited with code ${code}`);
+        });
     }else if(command == 'stop'){
         console.log('STOPPING GESTEASE - voice');
         child.kill('SIGTERM');
