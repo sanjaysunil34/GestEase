@@ -114,6 +114,10 @@ ipcMain.on("gesture",async (event, command) => {
 ipcMain.on("voice",async (event, command) => {
     if(command == 'start'){
         console.log('STARTING GESTEASE - Voice....');
+        console.log(__dirname);
+        var pat = __dirname
+        console.log('Hi');
+        console.log(`../${pat}`);
         child = spawn('python', ['../python_scripts/voice/speechrec.py', "start"]);
 
         child.stdout.on('data', function (data) {
@@ -129,7 +133,7 @@ ipcMain.on("voice",async (event, command) => {
         });
     }else if(command == 'voice_train'){
         console.log('NEW VOICE COMMAND ADDING');
-        child = spawn('python', ['../python_scripts/voice/add_new.py']);
+        child = spawn('python', ['../python_scripts/voice/add_new.py', ]);
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));

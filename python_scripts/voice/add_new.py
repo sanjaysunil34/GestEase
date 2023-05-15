@@ -1,3 +1,4 @@
+import sys
 import os
 from database import write_keys
 dirname = os.path.dirname(__file__)
@@ -10,4 +11,5 @@ def write_action():
     keys=f.readline()
     write_keys(action[:-1],keys)
     
-   
+if (sys.argv[1] == 'train'):
+    write_action()
