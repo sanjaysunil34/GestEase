@@ -133,7 +133,7 @@ ipcMain.on("voice",async (event, command) => {
         });
     }else if(command == 'voice_train'){
         console.log('NEW VOICE COMMAND ADDING');
-        child = spawn('python', ['../python_scripts/voice/add_new.py']);
+        child = spawn('python', ['../python_scripts/voice/add_new.py', ]);
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));
