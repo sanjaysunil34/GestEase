@@ -1,0 +1,52 @@
+{
+    "_default": {
+        "1": {
+            "action": "play/pause",
+            "keys": "space"
+        },
+        "2": {
+            "action": "close",
+            "keys": "alt+F4"
+        },
+        "3": {
+            "action": "next",
+            "keys": "right"
+        },
+        "4": {
+            "action": "previous",
+            "keys": "left"
+        },
+        "5": {
+            "action": "ok",
+            "keys": "enter"
+        },
+        "6": {
+            "action": "increase",
+            "keys": "up"
+        },
+        "7": {
+            "action": "decrease",
+            "keys": "left"
+        },
+        "8": {
+            "action": "switch",
+            "keys": "win + tab"
+        },
+        "9": {
+            "action": "present",
+            "keys": "F5"
+        },
+        "10": {
+            "action": "end_present",
+            "keys": "esc"
+        },
+        "11": {
+            "action": "windows",
+            "keys": "win"
+        },
+        "12": {
+            "action": "select_all",
+            "keys": "ctrl+a"
+        }
+    }
+}
