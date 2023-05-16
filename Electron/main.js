@@ -70,7 +70,7 @@ ipcMain.on("gesture",async (event, command) => {
     if(command == 'start'){
         console.log('STARTING GESTEASE - Gesture....');
 
-        child = spawn('C:/Users/Hp/anaconda3/envs/Gestease-Gesture/python.exe', ['../python_scripts/gesture/app-test.py']);
+        child = spawn('python', ['../python_scripts/gesture/app-test.py']);
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));
@@ -114,11 +114,11 @@ ipcMain.on("gesture",async (event, command) => {
 ipcMain.on("voice",async (event, command) => {
     if(command == 'start'){
         console.log('STARTING GESTEASE - Voice....');
-        console.log(__dirname);
-        var pat = __dirname
-        console.log('Hi');
-        console.log(`../${pat}`);
-        child = spawn('python', ['../python_scripts/voice/speechrec.py', "start"]);
+        //var loc = window.location.pathname;
+        //console.log(path.resolve(__dirname, '..'));
+        var parent = path.resolve(__dirname, '..');
+        var reqPath = parent + '\\python_scripts\\voice\\speechrec.py'
+        child = spawn('python', [reqPath, "start"]);
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));
@@ -133,7 +133,7 @@ ipcMain.on("voice",async (event, command) => {
         });
     }else if(command == 'voice_train'){
         console.log('NEW VOICE COMMAND ADDING');
-        child = spawn('python', ['../python_scripts/voice/add_new.py', ]);
+        child = spawn('python', ['../python_scripts/voice/add_new.py', "train"]);
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));
@@ -151,7 +151,7 @@ ipcMain.on("voice",async (event, command) => {
     }
 });
 
-function openFile() {
+function openFileGesture() {
     return new Promise((resolve, reject) => {
         fs.readFile("../python_scripts/gesture/db.json", "utf-8", (error, data) => {
             if (error) {
@@ -165,10 +165,36 @@ function openFile() {
     });
 }
 
-ipcMain.handle('load-file', async (event, message) => {
-    return await openFile()
+function openFileVoice() {
+    return new Promise((resolve, reject) => {
+        fs.readFile("../python_scripts/voice/db.json", "utf-8", (error, data) => {
+            if (error) {
+                // console.log('reject: ' + error); // Testing
+                reject(error);
+            } else {
+                console.log('resolve: ' + data); // Testing
+                resolve(data)
+            }
+        });
+    });
+}
+
+ipcMain.handle('load-file-gesture', async (event, message) => {
+    return await openFileGesture()
         .then((data) => {
-            console.log('handle: ' + data); // Testing
+            // console.log('handle: ' + data); // Testing
+            return data;
+        })
+        .catch((error) => {
+            console.log('handle error: ' + error); // Testing
+            return 'Error Loading Log File';
+        })
+});
+
+ipcMain.handle('load-file-voice', async (event, message) => {
+    return await openFileVoice()
+        .then((data) => {
+            // console.log('handle: ' + data); // Testing
             return data;
         })
         .catch((error) => {

@@ -39,14 +39,15 @@ let voiceControl = (command) => {
     ipcRenderer.send('voice',command);
 }
 
-let getData = () => ipcRenderer.invoke("load-file");
-
+let getDataVoice = () => ipcRenderer.invoke("load-file-voice");
+let getDataGesture = () => ipcRenderer.invoke("load-file-gesture");
 let indexBridge = {
     sendUrl,
     sendTXTUrl,
     gestureControl,
     voiceControl,
-    getData
+    getDataVoice,
+    getDataGesture
 }
 
 contextBridge.exposeInMainWorld("Bridge",indexBridge);
