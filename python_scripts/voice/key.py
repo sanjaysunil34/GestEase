@@ -8,6 +8,8 @@ def bind(action):
 
     if("open app" in action.lower()):
         openapp(action)
+    elif("search for" in action.lower()):
+        search_for(action)
     else:
         key = search_keys(action.lower())
         keyboard.press_and_release(key)

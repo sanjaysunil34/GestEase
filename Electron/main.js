@@ -72,17 +72,18 @@ ipcMain.on("gesture",async (event, command) => {
 
         child = spawn('python', ['../python_scripts/gesture/app-test.py']);
 
+        //debugging
         child.stdout.on('data', function (data) {
-            console.log("Python response: ", data.toString('utf8'));
+            console.log("Python response : ", data.toString('utf8'));
         });
         
         child.stderr.on('data', (data) => {
             console.error(`stderr: ${data}`);
         });
+
         child.on('close', (code) => {
             child.kill('SIGTERM');
             console.log(`child process exited with code ${code}`);
-            
         });
     }else if(command == 'stop'){        
         if (child) {
@@ -90,16 +91,17 @@ ipcMain.on("gesture",async (event, command) => {
               if (err) {
                 console.error(err);
               } else {
-                console.log("Child process terminated successfully");
+                console.log("Stop button pressed - Child process terminated successfully");
               }
             });
           }
     }else if(command == 'train'){
-        console.log('TRAINING');
+        console.log('Starting custom training....');
         child = spawn('python', ['../python_scripts/gesture/keypoint_csv_from_video.py']);
 
         child.stdout.on('data', function (data) {
             console.log("Python response: ", data.toString('utf8'));
+            
         });
 
         child.stderr.on('data', (data) => {

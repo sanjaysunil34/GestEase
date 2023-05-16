@@ -40,7 +40,6 @@ def Main():
 # Main()
 
 command = sys.argv[1]
-
 if command == "start":
     Main()
     sys.stdout.flush()

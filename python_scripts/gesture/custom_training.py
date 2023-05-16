@@ -1,3 +1,4 @@
+import sys
 import numpy as np
 from sklearn import svm
 import joblib
@@ -22,3 +23,6 @@ def training():
     model.fit(X_train, y_train)
     # Save the model to a file
     joblib.dump(model, model_save_path)
+
+    print("training complete")
+    sys.stdout.flush()

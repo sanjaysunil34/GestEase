@@ -6,7 +6,7 @@ element.onclick = function() {
     console.log(functionaility);
     console.log(binding);
 
-    // window.Bridge.getData().then((data) => {
+    // window.Bridge.getDataVoice().then((data) => {
     //   let dbdata = JSON.parse(data);
     //   console.log(dbdata);
     // })
