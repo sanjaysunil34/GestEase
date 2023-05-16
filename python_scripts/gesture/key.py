@@ -13,10 +13,10 @@ def notify(action):
     toaster.show_toast(msg=action.lower(),
                     title="Gesture detected",
                     icon_path=new,
-                    duration=1,
+                    duration=0,
                     threaded=True)  
     # Wait for threaded notification to finish
-    while toaster.notification_active(): sleep(0.1)
+    while toaster.notification_active(): sleep(2)
 
 def bind(action):
     # print(action)

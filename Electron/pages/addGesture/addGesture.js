@@ -51,6 +51,7 @@ function stopRecording() {
 		`vid-record-status`)
 		.innerText = "Recording done!";
 	window.Bridge.gestureControl("train");
+	location.replace("./loadingPage.html");
 }
 
 var element = document.getElementById('addgesture-back');
