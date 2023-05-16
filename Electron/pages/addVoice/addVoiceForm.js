@@ -6,10 +6,10 @@ element.onclick = function() {
     console.log(functionaility);
     console.log(binding);
 
-    window.Bridge.getData().then((data) => {
-      let dbdata = JSON.parse(data);
-      console.log(dbdata);
-    })
+    // window.Bridge.getDataVoice().then((data) => {
+    //   let dbdata = JSON.parse(data);
+    //   console.log(dbdata);
+    // })
 
     var res = functionaility.concat('\n');
     res = res.concat(binding);

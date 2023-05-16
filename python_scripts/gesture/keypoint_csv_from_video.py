@@ -2,11 +2,8 @@ import csv
 import copy
 import argparse
 import itertools
-
 import cv2 as cv
-import numpy as np
 import mediapipe as mp
-
 import os
 from database import write_keys
 from custom_training import training
@@ -39,12 +36,9 @@ def get_args():
 def main():
     # Argument parsing #################################################################
     args = get_args()
-
-
     use_static_image_mode = args.use_static_image_mode
     min_detection_confidence = args.min_detection_confidence
     min_tracking_confidence = args.min_tracking_confidence
-
 
     # Model load #############################################################
     mp_hands = mp.solutions.hands
@@ -63,7 +57,7 @@ def main():
     parent = os.path.dirname(dirname)
     main_dir = os.path.dirname(parent)
     recording_file = os.path.join(main_dir, 'Electron/recording/recording.mp4')
-    print("hello")
+    #print("hello")
     cap = cv.VideoCapture(recording_file)
     if not cap.isOpened():
         print("Cannot open video stream")
@@ -90,16 +84,13 @@ def main():
             print("Processing video stream completed.")
             break
 
-
-        
         if image_saved == 0  and i > 250:
-
             path_to_save = ".\images\\" + action[:-1] + '.jpg'
             #print(action)
             image_saved = 1
             cv.imwrite(path_to_save,frame)
             
-            print ('Creating...' + path_to_save)
+            #print ('Creating...' + path_to_save)
 
         i = i + 1
         
@@ -129,8 +120,6 @@ def main():
                     # Write to the dataset file
                     logging_csv(number, mode, pre_processed_landmark_list)
 
-
-
             if cv.waitKey(1) == ord('q') or i > 500:
                 break
  
@@ -138,28 +127,7 @@ def main():
     cv.destroyAllWindows()
     
     write_keys(action[:-1],keys)
-    
     training()
-
-
-
-def calc_bounding_rect(image, landmarks):
-    image_width, image_height = image.shape[1], image.shape[0]
-
-    landmark_array = np.empty((0, 2), int)
-
-    for _, landmark in enumerate(landmarks.landmark):
-        landmark_x = min(int(landmark.x * image_width), image_width - 1)
-        landmark_y = min(int(landmark.y * image_height), image_height - 1)
-
-        landmark_point = [np.array((landmark_x, landmark_y))]
-
-        landmark_array = np.append(landmark_array, landmark_point, axis=0)
-
-    x, y, w, h = cv.boundingRect(landmark_array)
-
-    return [x, y, x + w, y + h]
-
 
 def calc_landmark_list(image, landmarks):
     image_width, image_height = image.shape[1], image.shape[0]
@@ -203,8 +171,6 @@ def pre_process_landmark(landmark_list):
     return temp_landmark_list
 
 
-
-
 dirname = os.path.dirname(__file__)
 csv_path_keypoint = os.path.join(dirname, 'model/keypoint_classifier/keypoint.csv')
 csv_path_history = os.path.join(dirname, 'model/point_history_classifier/point_history.csv')
@@ -218,8 +184,6 @@ def logging_csv(number, mode, landmark_list):
             writer = csv.writer(f)
             writer.writerow([number, *landmark_list])
     return
-
-
 
 if __name__ == '__main__':
     main()
