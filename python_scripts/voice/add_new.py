@@ -11,6 +11,7 @@ def write_action():
     f=open(speech_file,"r")
     action=f.readline()
     keys=f.readline()
+    print(action[:-1],keys)
     write_keys(action[:-1],keys)
     
 if (sys.argv[1] == 'train'):
