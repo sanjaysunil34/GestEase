@@ -90,6 +90,7 @@ def main():
         image.flags.writeable = False
         results = hands.process(image)
         image.flags.writeable = True
+        # cv.imshow('Hand Gesture Recognition', debug_image)
 
         #  ####################################################################
         if results.multi_hand_landmarks is not None:
