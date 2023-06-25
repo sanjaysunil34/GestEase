@@ -3,7 +3,7 @@ from time import sleep
 from database import search_keys
 import os
 from win10toast import ToastNotifier
-import sys
+import pyttsx3
 
 def notify(action):
     dirname = os.path.dirname(__file__)
@@ -18,14 +18,23 @@ def notify(action):
     # Wait for threaded notification to finish
     while toaster.notification_active(): sleep(2)
 
+def sound_notification(action):
+    engine = pyttsx3.init()
+    voices = engine.getProperty('voices') 
+    rate = engine.getProperty('rate') 
+    print (rate) 
+    engine.setProperty('rate', 150) 
+    engine.setProperty('voice', voices[1].id) 
+    engine.say("Gesture detected: " + action.lower() )
+    engine.runAndWait()
+
 def bind(action):
-    # print(action)
-    
-    # print("action : " + action.lower())
-    # sys.stdout.flush()
     key = search_keys(action.lower())
-    notify(action)
-    # print(key)
-    # sys.stdout.flush()
+    
+    # notification toast 
+    # notify(action)
+
+    # sound notification
+    sound_notification(action)
+
     keyboard.press_and_release(key)
-    #sleep(2)
