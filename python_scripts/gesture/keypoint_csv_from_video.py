@@ -84,7 +84,7 @@ def main():
             print("Processing video stream completed.")
             break
 
-        if image_saved == 0  and i > 250:
+        if image_saved == 0  and i > 100:
             path_to_save = ".\images\\" + action[:-1] + '.jpg'
             #print(action)
             image_saved = 1
